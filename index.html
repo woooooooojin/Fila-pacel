@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILA</title>
+    <script src="./js_2/jquery-3.6.4.min.js"></script>
+    <script src="./js/jquery_import.js"></script>
+    <!--jquery import-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" /> -->
+    <link rel="stylesheet" href="./index.css">
+    <!--css-->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!--gsap cdn-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+    <!--gsap scroll to-->
+
+
+    <!--user js-->
+    <script src="./js/main.js" defer></script>
+    <script src="./js/countdown.js" defer></script>
+    <!--countdown js-->
+
+
+    <!--scroll magic-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--fontawesome-->
+
+    <!-- <script src="./js/jquery_import.js"></script>
+    import jquery -->
+
+
+    <script>
+        $(function () {
+
+            //lnb slide toggle function
+
+
+
+
+            $('.lnb_women').click(function () {
+                $('.drop_women').slideToggle(300);
+                $('.drop_men').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+                // $('.head_logo .imgwrap img').attr('src','./img/LOGO/01(1).png')
+
+            })
+
+
+            $('.lnb_men').click(function () {
+                $('.drop_men').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+            $('.lnb_kids').click(function () {
+                $('.drop_kids').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_men').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+            $('.lnb_brand').click(function () {
+                $('.drop_brand').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_men').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+
+
+            $('.new_info').click(function () {
+                $('.new_info_desc').css('display', 'block')
+            })
+
+            // $('.new_box_close').click(function(){
+            //     $('.new_info_desc').css('display','none')
+            // })
+
+            // $(window).scroll(function(){
+            //     if($(window).scrollTop() > 100){
+            //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(1).png');
+            //         $('header').css('backgroundColor','#fff')
+            //         $('.head_lnb ul li a').css('color','black')
+            //         $('.head_gnb ul li a').css('color','black')
+            //     }else{
+            //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(3).png')
+            //         $('header').css('backgroundColor','')
+            //         $('.head_lnb ul li a').css('color','#fff')
+            //         $('.head_gnb ul li a').css('color','#fff')
+            //     }
+            // })
+
+
+
+            //dir btn event
+            $(window).scroll(function () {
+
+                if ($(window).scrollTop() >= 500) {
+                    $('.dir_btn').stop().animate({
+                        right: 0,
+                    }, 500)
+                } else {
+                    $('.dir_btn').stop().animate({
+                        right: -50,
+                    }, 500)
+                }
+            })
+
+            $('.top_btn').click(function (e) {
+                e.preventDefault();
+
+                $('html, body').stop().animate({
+                    scrollTop: 0,
+                }, 300)
+            })
+
+            $('.bot_btn').click(function (e) {
+                e.preventDefault();
+
+                $('html, body').stop().animate({
+                    scrollTop: $(document).height(),
+                }, 300)
+            })
+
+
+
+
+
+
+        })
+
+        $(function () {
+
+            $('.quick_menu').css('top', $(window).height() / 2 - $('.quick_menu').height() / 2);
+            $(window).scroll(function () {
+
+                let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick_menu').height() /
+                    2)
+
+                $('.quick_menu').stop().animate({
+                    top: point,
+                }, 300)
+            })
+        }) // quickmenu 
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <!--popup-->
+    <div class="countdown">
+
+        <h1>런칭캘린더</h1>
+
+        <div class="countdown_box">
+
+            <div class="count_img">
+                <video src="./img/targa.mp4" muted loop playsinline autoplay></video>
+
+            </div>
+            <div class="time">
+                <p id="count_time"></p>
+            </div>
+        </div>
+        <div class="close_btn"><i class="far fa-times-circle"></i></div>
+    </div>
+
+
+
+
+
+    <header class="header">
+
+        <div class="header_wrap">
+
+            <div class="head_logo">
+                <div class="imgwrap">
+                    <a href="./index.html">
+                        <img src="./img/LOGO/logo03.png" alt="logo" class="logoimg">
+                    </a>
+                </div>
+
+            </div>
+            <!--head logo-->
+
+            <div class="head_lnb">
+                <ul>
+                    <li class="lnb_women"><a href="#!" class="black">WOMEN</a></li>
+                    <li class="lnb_men"><a href="#!" class="black">MEN</a></li>
+                    <li class="lnb_kids"><a href="#!" class="black">KIDS</a></li>
+                    <li class="lnb_brand"><a href="#!" class="black">BRAND</a></li>
+                </ul>
+            </div>
+            <!--head lnb-->
+
+            <div class="head_gnb">
+                <ul>
+                    <li><a href="#!"><i class="fas fa-map-marker-alt"></i></a></li>
+                    <li><a href="#!"><i class="fas fa-search gnb_search"></i></li>
+                    <li><a href="#!"><i class="fas fa-user-alt"></i></li>
+                    <li>
+                        <a href="#!"><i class="fas fa-shopping-basket"></i>
+                            <span class="count">0</span>
+                    </li>
+                </ul>
+            </div>
+            <!--head gnb-->
+
+        </div><!-- hedaer wrap-->
+
+
+        <!--drop down menu-->
+        <div class="dropdown_menu drop_women">
+            <div class="container">
+
+                <div class="drop_menu_wrap">
+                    <div class="dropbox_01 dbox">
+                        <h4>New & Featured</h4>
+                        <ul class="menu_list">
+                            <li><a href="#!">신상품</a></li>
+                            <li><a href="#!">베스트</a></li>
+                            <li><a href="#!">스타일</a></li>
+                            <li><a href="#!">세일</a></li>
+
+                        </ul>
+                        <ul class="sub_menu">
+                            <li><a href="./sub_onepage/sub02.html">ONLINE EXCLUSIVE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">TENNIS COLLECTION</a></li>
+                            <li><a href="./sub_onepage/sub02.html">FLOAT ELITE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">DAILY SHOES RAYFLIDE</a></li>
+                        </ul>
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_02 dbox">
+                        <h4>의류</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">바람막이/아노락</a></li>
+                            <li><a href="#!">후드티/맨투맨</a></li>
+                            <li><a href="#!">트레이닝 세트</a></li>
+                            <li><a href="#!">니트/스웨터</a></li>
+                            <li><a href="#!">티셔츠</a></li>
+                            <li><a href="#!">브라탑/레깅스</a></li>
+                            <li><a href="#!">팬츠</a></li>
+                            <li><a href="#!">스커트/원피스</a></li>
+                            <li><a href="#!">다운/플리스</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 02 end-->
+
+                    <div class="dropbox_03 dbox">
+                        <h4>신발</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">라이프스타일</a></li>
+                            <li><a href="#!">헤리티지</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">러닝</a></li>
+                            <li><a href="#!">샌들/슬리퍼</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_04 dbox">
+                        <h4>용품</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">백팩</a></li>
+                            <li><a href="#!">메신저백</a></li>
+                            <li><a href="#!">숄더백/토트백</a></li>
+                            <li><a href="#!">모자</a></li>
+                            <li><a href="#!">양말</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">기타</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_05 dbox">
+                        <h4>언더웨어</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+                            <li><a href="#!">브라</a></li>
+                            <li><a href="#!">팬티</a></li>
+                            <li><a href="#!">커플</a></li>
+                            <li><a href="#!">이너웨어</a></li>
+                            <li><a href="#!">라이프웨어</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+
+                    <div class="dropbox_06 dbox">
+                        <h4>스포츠</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">러닝</a></li>
+
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                </div>
+                <!--dropdown menu wrap end-->
+
+            </div>
+            <!--container-->
+        </div>
+        <!--dropdown menu end-->
+
+
+
+
+        <div class="dropdown_menu drop_men">
+
+            <div class="container">
+                <div class="drop_menu_wrap">
+                    <div class="dropbox_01 dbox">
+                        <h4>New & Featured</h4>
+                        <ul class="menu_list">
+                            <li><a href="#!">신상품</a></li>
+                            <li><a href="#!">베스트</a></li>
+                            <li><a href="#!">스타일</a></li>
+                            <li><a href="#!">세일</a></li>
+
+                        </ul>
+                        <ul class="sub_menu">
+                            <li><a href="./sub_onepage/sub02.html">ONLINE EXCLUSIVE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">TENNIS COLLECTION</a></li>
+                            <li><a href="./sub_onepage/sub02.html">FLOAT ELITE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">DAILY SHOES RAYFLIDE</a></li>
+                        </ul>
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_02 dbox">
+                        <h4>의류</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">바람막이/아노락</a></li>
+                            <li><a href="#!">후드티/맨투맨</a></li>
+                            <li><a href="#!">트레이닝 세트</a></li>
+                            <li><a href="#!">니트/스웨터</a></li>
+                            <li><a href="#!">티셔츠</a></li>
+                            <li><a href="#!">브라탑/레깅스</a></li>
+                            <li><a href="#!">팬츠</a></li>
+                            <li><a href="#!">스커트/원피스</a></li>
+                            <li><a href="#!">다운/플리스</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 02 end-->
+
+                    <div class="dropbox_03 dbox">
+                        <h4>신발</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">라이프스타일</a></li>
+                            <li><a href="#!">헤리티지</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">러닝</a></li>
+                            <li><a href="#!">샌들/슬리퍼</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_04 dbox">
+                        <h4>용품</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">백팩</a></li>
+                            <li><a href="#!">메신저백</a></li>
+                            <li><a href="#!">숄더백/토트백</a></li>
+                            <li><a href="#!">모자</a></li>
+                            <li><a href="#!">양말</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">기타</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_05 dbox">
+                        <h4>언더웨어</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+                            <li><a href="#!">브라</a></li>
+                            <li><a href="#!">팬티</a></li>
+                            <li><a href="#!">커플</a></li>
+                            <li><a href="#!">이너웨어</a></li>
+                            <li><a href="#!">라이프웨어</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_06 dbox">
+                        <h4>스포츠</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">러닝</a></li>
+
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                </div>
+                <!--dropdown menu wrap end-->
+
+            </div>
+            <!--container-->
+        </div>
+        <!--dropdown menu end-->
+
+
+        <div class="dropdown_menu drop_kids">
+            <div class="container">
+
+                <div class="drop_menu_wrap">
+                    <div class="dropbox_01 dbox">
+                        <h4>New & Featured</h4>
+                        <ul class="menu_list">
+                            <li><a href="#!">신상품</a></li>
+                            <li><a href="#!">베스트</a></li>
+                            <li><a href="#!">스타일</a></li>
+                            <li><a href="#!">세일</a></li>
+
+                        </ul>
+                        <ul class="sub_menu">
+                            <li><a href="./sub_onepage/sub02.html">ONLINE EXCLUSIVE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">>TENNIS COLLECTION</a></li>
+                            <li><a href="./sub_onepage/sub02.html">>FLOAT ELITE</a></li>
+                            <li><a href="./sub_onepage/sub02.html">>DAILY SHOES RAYFLIDE</a></li>
+                        </ul>
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_02 dbox">
+                        <h4>의류</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">바람막이/아노락</a></li>
+                            <li><a href="#!">후드티/맨투맨</a></li>
+                            <li><a href="#!">트레이닝 세트</a></li>
+                            <li><a href="#!">니트/스웨터</a></li>
+                            <li><a href="#!">티셔츠</a></li>
+                            <li><a href="#!">브라탑/레깅스</a></li>
+                            <li><a href="#!">팬츠</a></li>
+                            <li><a href="#!">스커트/원피스</a></li>
+                            <li><a href="#!">다운/플리스</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 02 end-->
+
+                    <div class="dropbox_03 dbox">
+                        <h4>신발</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">라이프스타일</a></li>
+                            <li><a href="#!">헤리티지</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">러닝</a></li>
+                            <li><a href="#!">샌들/슬리퍼</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+                    <div class="dropbox_04 dbox">
+                        <h4>용품</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">백팩</a></li>
+                            <li><a href="#!">메신저백</a></li>
+                            <li><a href="#!">숄더백/토트백</a></li>
+                            <li><a href="#!">모자</a></li>
+                            <li><a href="#!">양말</a></li>
+                            <li><a href="#!">테니스</a></li>
+                            <li><a href="#!">기타</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+
+                    <div class="dropbox_05 dbox">
+                        <h4>언더웨어</h4>
+                        <ul class="menu_list">
+                            <li><a href="./subpage01/sub01.html">전체보기</a></li>
+                            <li><a href="#!">온라인 단독</a></li>
+                            <li><a href="#!">브라</a></li>
+                            <li><a href="#!">팬티</a></li>
+                            <li><a href="#!">커플</a></li>
+                            <li><a href="#!">이너웨어</a></li>
+                            <li><a href="#!">라이프웨어</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!--drop box 01 end-->
+
+
+                </div>
+                <!--dropdown menu wrap end-->
+
+
+            </div>
+            <!--container -->
+
+        </div>
+        <!--dropdown menu end-->
+
+
+
+        <div class="dropdown_menu drop_brand">
+
+
+            <div class="drop_menu_wrap">
+
+                <div class="brand_box">
+                    <div class="brand_img">
+                        <img src="./img/01. 메인/08. 메뉴이미지/menu01.jpg" alt="brand01">
+                    </div>
+                    <div class="brand_tit">
+                        <h4>About FILA</h4>
+                    </div>
+                </div>
+                <!--brand box-->
+
+                <div class="brand_box">
+                    <div class="brand_img">
+                        <img src="./img/01. 메인/08. 메뉴이미지/menu02.jpg" alt="brand01">
+                    </div>
+                    <div class="brand_tit">
+                        <h4>Collaboration</h4>
+                    </div>
+                </div>
+                <!--brand box-->
+
+                <div class="brand_box">
+                    <div class="brand_img">
+                        <img src="./img/01. 메인/08. 메뉴이미지/menu03.jpg" alt="brand01">
+                    </div>
+                    <div class="brand_tit">
+                        <h4>Sustainability</h4>
+                    </div>
+                </div>
+                <!--brand box-->
+
+                <div class="brand_box">
+                    <div class="brand_img">
+                        <img src="./img/01. 메인/08. 메뉴이미지/menu04.jpg" alt="brand01">
+                    </div>
+                    <div class="brand_tit">
+                        <h4>Athelete</h4>
+                    </div>
+                </div>
+                <!--brand box-->
+
+                <div class="brand_box">
+                    <div class="brand_img">
+                        <img src="./img/01. 메인/08. 메뉴이미지/menu05.jpg" alt="brand01">
+                    </div>
+                    <div class="brand_tit">
+                        <h4>Tennis Stories</h4>
+                    </div>
+                </div>
+                <!--brand box-->
+
+            </div>
+            <!--dropdown menu wrap end-->
+
+
+        </div>
+        <!--dropdown menu end-->
+
+
+    </header>
+
+
+
+
+
+    <div class="search_box">
+        <div class="search_box_wrap">
+
+            <div class="search_input">
+                <input type="search" placeholder="검색어 입력" id="searchbox">
+                <div class="search_close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="search_icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="search_list_wrap">
+
+                <div class="search_list">
+                    <h4>인기검색어</h4>
+                    <ul>
+                        <li>데일리슈즈</li>
+                        <li>휠라레이플라이드</li>
+                        <li>디스럽터</li>
+                        <li>휠라골프</li>
+                        <li>리니어로고</li>
+                        <li>바람막이</li>
+                    </ul>
+                </div>
+                <!--list-->
+
+                <div class="search_list">
+                    <h4>추천검색어</h4>
+                    <ul>
+                        <li>데일리슈즈</li>
+                        <li>휠라레이플라이드</li>
+                        <li>디스럽터</li>
+                        <li>휠라골프</li>
+                        <li>리니어로고</li>
+                        <li>바람막이</li>
+                    </ul>
+                </div>
+                <!--list-->
+
+                <div class="search_list recent_search">
+                    <h4>최근검색어</h4>
+                    <ul>
+                        <li class="noresearch">최근 검색어가 없습니다.</li>
+
+                    </ul>
+
+                    <div class="delete_history">
+                        <span>전체기록삭제</span>
+                    </div>
+                </div>
+                <!--list-->
+
+            </div>
+            <!--list wrap-->
+
+
+
+        </div>
+        <!--searchbox wrap end-->
+    </div>
+    <!--search box-->
+
+
+
+
+
+
+    <section class="visual_main">
+        <div class="swiper">
+
+
+
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="./images2/fila01.jpg" alt="img">
+                    <div class="visual_tit">
+                        <p>
+                            FILA TENNIS COLLECTION
+                        </p>
+                        <a href="#!">컬렉션 보기</a>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images2/fila02.jpg" alt="img">
+                    <div class="visual_tit">
+                        <p>
+                            FILA SPORTS LIFE
+                        </p>
+                        <a href="#!">컬렉션 보기</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images2/fila03.jpg" alt="img">
+                    <div class="visual_tit">
+                        <p>
+                            FILA FLOAT ELITE
+                        </p>
+                        <a href="#!">컬렉션 보기</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images2/fila04.jpg" alt="img">
+                    <div class="visual_tit">
+                        <p>
+                            FILA HERITAGE COLLECTION
+                        </p>
+                        <a href="#!">컬렉션 보기</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="swiper-pagination" pagination-type="progressbar"></div>
+
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+
+            <div class="swiper-pagination pagination_fraction"></div>
+            <div class="swiper-pagination pagination_progress"></div>
+
+
+        </div>
+    </section>
+
+
+    <section class="rank_section">
+        <h1>랭킹</h1>
+        <div class="container">
+            <div class="container_rank">
+
+                <div class="rank_nav">
+                    <ul>
+                        <li id="tshirt">#티셔츠 & 팬츠</li>
+                        <li id="targa">#타르가</li>
+                        <li id="online">#온라인단독</li>
+                        <li id="tennis">#테니스</li>
+                        <li id="running">#런닝화</li>
+
+                    </ul>
+                </div>
+                <div class="rank_wrap">
+                    <div class="rank_text">
+                        <h4>#티셔츠 & 팬츠</h4>
+                        <ul class="ranklist">
+                            <li class="on_li">컴포트핏 인터네셔널 반팔 맨투맨</li>
+                            <li>컴포트핏 조거팬츠</li>
+                            <li>이지팬츠</li>
+                            <li>베이직 리니어 반팔티</li>
+                            <li>3D 빅로고 반팔티</li>
+                            <li>컴포트핏 인터네셔널 로고 반팔티</li>
+
+
+
+                        </ul>
+                    </div>
+
+                    <div class="swiper_rank">
+
+
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide rank_slide">
+
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/04.jpg" alt="img">
+                                    </a>
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">컴포트핏 인터네셔널 반팔 맨투맨</h4>
+                                        <p>79,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+                            </div>
+                            <!--slide1-->
+
+
+                            <div class="swiper-slide rank_slide">
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/05.jpg" alt="img">
+                                    </a>
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">컴포트핏 조거팬츠</h4>
+                                        <p>119,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+                            </div>
+
+                            <div class="swiper-slide rank_slide">
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/06.jpg" alt="img">
+                                    </a>
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">이지팬츠</h4>
+                                        <p>69,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+                            </div>
+
+                            <div class="swiper-slide rank_slide">
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/01.jpg" alt="img">
+                                    </a>
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">베이직 리니어 반팔티</h4>
+                                        <p>99,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+                            </div>
+
+                            <div class="swiper-slide rank_slide">
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/02.jpg" alt="img">
+                                    </a>
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">3D 빅로고 반팔티</h4>
+                                        <p>139,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+                            </div>
+
+
+                            <div class="swiper-slide rank_slide">
+
+                                <div class="img_wrap">
+                                    <a href="./detailpage/detail.html">
+                                        <img src="./img/01. 메인/02. 지금 많이 찾는 상품/01. 티셔츠&팬츠/03.jpg" alt="img">
+                                    </a>
+
+                                </div>
+
+                                <div class="rank_hover_box">
+                                    <div class="rank_hover_L">
+                                        <h4 class="hovertit">컴포트핏 인터네셔널 로고 반팔티</h4>
+                                        <p>119,000원</p>
+                                    </div>
+                                    <div class="rank_hover_R">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                    </div>
+                                </div>
+                                <!--rank hover box-->
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!--rank wrap-->
+
+            </div>
+        </div>
+        <!--container-->
+
+    </section>
+
+
+
+    <section class="back_fix">
+
+        <div class="background_wrap">
+
+            <p>WINNING TOGETHER by FILA Corporation</p>
+            <p>Sustainability</p>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- <div class="new_info_desc">
+        <div class="new_desc_wrap">
+            <h4>상품 정보 고시</h4>
+            <div class="new_desc_box">
+               <dl>
+                <dt>상품명</dt>
+                <dd>테니스짐백</dd>
+               </dl>
+
+               <dl>
+                <dt>상품코드</dt>
+                <dd>1100FS3BSF5205XBLK</dd>
+               </dl>
+
+               <dl>
+                <dt>제품소재</dt>
+                <dd>겉감: 나일론 100% 안감: 폴리에스터 100%</dd>
+               </dl>
+
+               <dl>
+                <dt>색상</dt>
+                <dd>BLK(블랙)</dd>
+               </dl>
+
+               <dl>
+                <dt>사이즈</dt>
+                <dd>가로76 X 높이34 X 폭23 CM</dd>
+               </dl>
+
+               <dl>
+                <dt>제조년월</dt>
+                <dd>2023.03</dd>
+               </dl>
+
+               <dl>
+                <dt>제조국</dt>
+                <dd>China</dd>
+               </dl>
+
+               <dl>
+                <dt>제조사</dt>
+                <dd>휠라코리아(주)</dd>
+               </dl>
+
+               <dl>
+                <dt>품질보증기준</dt>
+                <dd>관련법 및 소비자 분쟁해결기준에 따름</dd>
+               </dl>
+
+            </div>
+
+        </div>
+    </div> -->
+
+
+    <section class="section2">
+        <div class="new_info_desc">
+            <div class="new_desc_wrap">
+                <h4>상품 정보 고시</h4>
+                <div class="new_box_close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="new_desc_box">
+
+
+                    <dl>
+                        <dt>상품명</dt>
+                        <dd>테니스짐백</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>상품코드</dt>
+                        <dd>1100FS3BSF5205XBLK</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>제품소재</dt>
+                        <dd>겉감: 나일론 100% 안감: 폴리에스터 100%</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>색상</dt>
+                        <dd>BLK(블랙)</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>사이즈</dt>
+                        <dd>가로76 X 높이34 X 폭23 CM</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>제조년월</dt>
+                        <dd>2023.03</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>제조국</dt>
+                        <dd>China</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>제조사</dt>
+                        <dd>휠라코리아(주)</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>품질보증기준</dt>
+                        <dd>관련법 및 소비자 분쟁해결기준에 따름</dd>
+                    </dl>
+
+                </div>
+
+            </div>
+        </div>
+
+        <h2>신제품</h2>
+        <div class="container">
+
+            <div class="container_swiper">
+                <div class="new_nav_wrap">
+                    <ul>
+                        <li class="new_on" id="newTshirt">#티셔츠 & 팬츠</li>
+                        <li id="newTennis">#테니스</li>
+                        <li id="newShoes">#신발</li>
+                    </ul>
+                </div>
+                <div class="my_wrap">
+                    <div class="swiper_2">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide newslide">
+
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new01.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>테니스 짐백</h4>
+                                        <p class="first_p">가방 뒷편에 신발을 넣을 수 있는 포켓이 구성되어있어 수납성이 높은 짐백입니다.</p>
+                                        <p class="second_p">가방 안쪽이 파티션으로 구분되어 있어 라켓과 옷을 분리하여 수납이 가능합니다.</p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />겉감: 나일론 100% <br /> 안감: 폴리에스터 100%<br />
+                                            <span>상품코드 : 1100FS3BSF5205XBLK</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+
+                            </div>
+
+
+
+
+
+                            <div class="swiper-slide newslide">
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new02.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>휠라 테이퍼 샌들 v3</h4>
+                                        <p class="first_p">휠라의 베스트 샌들 중 하나인 테이퍼 샌들의 2023 버전입니다.</p>
+                                        <p class="second_p">벨크로를 사용하여 발등높이에 맞게 조절이 가능하여 착용자의 발에 맞춰 편안하게 착용 가능합니다.
+                                        </p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />겉감: 폴리에스터 100%<br />안감: 폴리에스터 93%+폴리우레탄 7% <br />
+                                            [창재료] 합성고무<br />
+                                            <span>상품코드 : 11001SM01977F400</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+                            </div>
+
+
+
+                            <div class="swiper-slide newslide">
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new03.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>컴포트핏 인터내셔널<br />우븐 후드티</h4>
+                                        <p class="first_p">컴포트 핏으로 트렌디한 실루엣, 편안한 착용감을 주는 우븐 후드 상품입니다.</p>
+                                        <p class="second_p">빅로고 프린트의 디자인 포인트와 등판의 벤틸레이션 기능으로 봄~여름에도 착용이 가능한 상품입니다.
+                                        </p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />겉감: 폴리에스터 100%<br /> 주머니감: 폴리에스터 100%<br /> 해리감:
+                                            폴리에스터 100%<br />
+                                            <span>상품코드 : 1100FS2JKF2132XLGY</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+                            </div>
+
+
+
+                            <div class="swiper-slide newslide">
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new04.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>테니스 반바지</h4>
+                                        <p class="first_p">테니스 활동 시, 편안한 착장감과 볼주머니로 활용이 가능한 깊은 주머니감이 실용적입니다.</p>
+                                        <p class="second_p">휠라 시그니처 허리밴드 포인트로 작게 들어간 F박스 로고 포인트가 적용됐습니다.</p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />겉감: 폴리에스테르 87%<br />폴리우레탄 13%<br />주머니감: 폴리에스테르
+                                            100%<br />
+                                            <span>상품코드 : 1100FS3BSF5205XBLK</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+                            </div>
+
+
+
+                            <div class="swiper-slide newslide">
+
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new05.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>컴포트핏 플래그 반팔티</h4>
+                                        <p class="first_p">착용감이 좋은 우수한 퀄리티의 면 100% 소재를 사용했습니다.</p>
+                                        <p class="second_p">시그니처 플래그 디자인을 포인트로 사용한 트렌디한 실루엣의 남녀공용 여름 반팔티입니다.</p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />면 100%<br />
+                                            <span>상품코드 : 1100FS2RSF2110XOWH</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+                            </div>
+
+
+
+                            <div class="swiper-slide newslide">
+                                <div class="new_wrap">
+                                    <div class="new_img">
+                                        <a href="./detailpage/detail.html">
+                                            <img src="./img/newarrival/new06.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="new_text">
+                                        <h4>WHITE LINE<br />라켓 슬링백</h4>
+                                        <p class="first_p">오버헤드라켓(~114 sp.in) 수납이 가능한 테니스 슬링백입니다.</p>
+                                        <p class="second_p">앞 포켓에 라켓 1pcs, 뒷 포켓에 추가 라켓 및 작은 소지품 수납이 가능합니다.</p>
+
+                                        <p class="new_detail">
+                                            <span>제품소재</span><br />겉감: 폴리우레탄 100% <br /> 안감 : 폴리에스터 100%<br />
+                                            <span>상품코드 : 1100FS3BCF5205XOWH</span>
+                                        </p>
+
+                                        <p class="new_info">상품정보고시</p>
+
+                                        <div class="new_buy">
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart" id="cartcnt"></i>
+                                        </div>
+                                    </div>
+                                    <!--new_text-->
+                                </div>
+                                <!--new wrap-->
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+                    <!--swiper_2 end-->
+                </div>
+                <!--my wrap end-->
+            </div>
+            <!--container swiper-->
+        </div>
+        <!--container-->
+    </section>
+
+
+
+
+    <section class="magazine_section">
+
+        <h1>MAGAZINE</h1>
+        <div class="container">
+
+
+            <div class="magazine_wrap">
+
+                <div class="mgz_box mgz01">
+                    <div class="mgz-cont">
+                        <div class="mgz_img">
+                            <img src="./img/01. 메인/03. 화보/01.jpg" alt="img">
+                            <div class="mgz_desc">
+                                <h4>LIFE STYLE PANTS<br /> COLLECTION</h4>
+                                <p>편안함이 돋보이는 라이프 스타일 팬츠 컬렉션 <br /> 다양한 핏으로 구성된 팬츠 컬렉션을 만나보세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mgz_tit">
+                        <p>FILA PANTS COLLECTION</p>
+                    </div>
+                </div>
+                <!--mgz box-->
+
+                <div class="mgz_box mgz02">
+                    <div class="mgz-cont">
+                        <div class="mgz_img">
+                            <img src="./img/01. 메인/03. 화보/02.jpg" alt="img">
+                            <div class="mgz_desc">
+                                <h4>FILA TENNIS HERITAGE<br />WHITE LINE</h4>
+                                <p>비욘 보그와 함께한 영광의 순간을 재현한<br /> 휠라 테니스 헤리티지</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mgz_tit">
+                        <p>FILA TENNIS HERITAGE</p>
+                    </div>
+                </div>
+                <!--mgz box-->
+
+                <div class="mgz_box mgz03">
+                    <div class="mgz-cont">
+                        <div class="mgz_img">
+                            <img src="./img/01. 메인/03. 화보/03.jpg" alt="img">
+                            <div class="mgz_desc">
+                                <h4>FOriginal Tennis OG 1985</h4>
+                                <p>당시 최고의 퍼포먼스 슈즈 <br />FILA 대표 코트 아이템<br />' Original Tennis OG 1985 '</p>
+                            </div>
+                            <!--mgz desc-->
+                        </div>
+                        <!--mgz img-->
+                    </div>
+                    <!--mgz cont-->
+                    <div class="mgz_tit">
+                        <p>Original Tennis OG 1985</p>
+                    </div>
+                    <!--mgz tit -->
+                </div>
+                <!--mgz box-->
+
+                <div class="mgz_box mgz04">
+                    <div class="mgz-cont">
+                        <div class="mgz_img">
+                            <img src="./img/01. 메인/03. 화보/04.jpg" alt="img">
+                            <div class="mgz_desc">
+                                <h4>TARGA CLUB LT</h4>
+                                <p>Enersized Soft insert™ 인솔을 사용하여<br />편안한 쿠션감을 제공하는 프리미엄 코트화</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mgz_tit">
+                        <p>TARGA CLUB LT</p>
+                    </div>
+                </div>
+                <!--mgz box-->
+
+
+
+            </div>
+            <!--magazine wrap end-->
+
+
+
+        </div>
+        <!--container end -->
+
+
+
+    </section>
+
+
+    <section class="recommand_style">
+        <h1>추천스타일</h1>
+        <div class="container">
+
+            <div class="rec_style_wrap">
+                <div class="recommand_box">
+                    <div class="rec_img_wrap">
+                        <img src="./img/01. 메인/04. 추천 스타일/12.jpg" alt="img">
+                    </div>
+                    <!--imgwrap-->
+
+                    <div class="rec_info_wrap">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc">
+                                        <div class="rec_tit">
+                                            <h4>컴포트핏 더블와펜 맨투맨</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>99,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+
+                    <div class="rec_info_wrap iw02">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc rd02">
+                                        <div class="rec_tit">
+                                            <h4>휠라 레이드 N3 2.0</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>79,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+
+
+
+
+
+                </div>
+                <!--rec box end-->
+
+                <div class="recommand_box ">
+                    <div class="rec_img_wrap">
+                        <img src="./img/01. 메인/04. 추천 스타일/01.jpg" alt="">
+                    </div>
+
+                    <div class="rec_info_wrap">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc">
+                                        <div class="rec_tit">
+                                            <h4>테니스 라이프 카라원피스</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>119,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+                    <div class="rec_info_wrap iw03">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc">
+                                        <div class="rec_tit">
+                                            <h4>휠라 스피드서브 T9</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>159,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+
+
+
+                </div>
+
+                <div class="recommand_box">
+                    <div class="rec_img_wrap">
+                        <img src="./img/01. 메인/04. 추천 스타일/24.jpg" alt="">
+                    </div>
+
+                    <div class="rec_info_wrap iw04">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc">
+                                        <div class="rec_tit">
+                                            <h4>오버핏 케이블 가디건</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>139,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+
+                    <div class="rec_info_wrap iw05">
+                        <div class="rec_info">
+                            <div class="rec_circle">
+                                <div class="span_wrap">
+                                    <span></span>
+                                    <span class="spanline2"></span>
+
+                                    <div class="rec_desc">
+                                        <div class="rec_tit">
+                                            <h4>아치로고 맨투맨</h4>
+                                        </div>
+                                        <!--rec tit-->
+                                        <div class="rec_price">
+                                            <p>69,000원</p>
+                                        </div>
+                                        <div class="cart_like_wrap">
+
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-shopping-cart"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <!--rec desc box-->
+                                </div>
+                                <!--span wrap end-->
+
+
+
+                            </div>
+                            <!--rec circle end-->
+
+                        </div>
+                        <!--rec info-->
+                    </div>
+                    <!--rec info wrap end-->
+
+                </div>
+
+
+
+            </div>
+            <!--rec style wrap end-->
+
+        </div>
+        <!--container end-->
+
+    </section>
+
+
+    <section class="sns_section">
+        <h1>SNS</h1>
+        <div class="container">
+
+            <div class="sns_wrap">
+
+                <div class="sns_box origin  sbox01">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/02.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>'FILA RAY FLIDE Ver.2'<br />
+
+                        </p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin  sbox02">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/03.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>괌 테니스 응모권 당첨자 발표 안내 !</p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin  sbox03">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/07.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>
+                            FILA 테니스 페스티벌 오픈 in SEOUL</p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin  sbox04">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/18.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>'FILLA COMFORT FIT WINDBREAKER'<br />
+                        </p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin sbox05">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/19.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>
+                            '테니스 퍼포먼스 베이직 카라 티셔츠'<br />
+                        </p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin sbox06">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/10.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>2023 WHITE OPEN SEOUL !</p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin  sbox07">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/11-1.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>
+                            Tennis로 완성된 스포츠와 휠라만의 퍼즐<br />
+
+                        </p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+                <div class="sns_box origin sbox08">
+                    <div class="sns_img">
+                        <img src="./img/01. 메인/07. 인스타그램/20-1.jpg" alt="img">
+                    </div>
+
+                    <div class="sns_desc">
+                        <p>FILA TENNIS COLLETCION #1</p>
+                    </div>
+                </div>
+                <!--snsbox end-->
+
+
+            </div>
+            <!--sns wrap end-->
+
+        </div>
+        <!--container end-->
+    </section>
+
+
+    <footer class="footer">
+        <div class="contianer">
+
+
+            <div class="footer_wrap">
+                <div class="footer_box1">
+
+                    <div class="foot_logo">
+                        <img src="./img/LOGO/01(1).png" alt="img">
+                    </div>
+                    <div class="foot_menu01">
+                        <h4>WOMEN</h4>
+                        <ul>
+                            <li>의류</li>
+                            <li>신발</li>
+                            <li>용품</li>
+                            <li>언더웨어</li>
+                            <li>베스트</li>
+                            <li>신상품</li>
+                            <li>세일</li>
+                        </ul>
+                    </div>
+                    <div class="foot_menu02">
+                        <h4>MEN</h4>
+                        <ul>
+                            <li>의류</li>
+                            <li>신발</li>
+                            <li>용품</li>
+                            <li>언더웨어</li>
+                            <li>베스트</li>
+                            <li>신상품</li>
+                            <li>세일</li>
+                        </ul>
+                    </div>
+                    <div class="foot_menu03">
+                        <h4>KIDS</h4>
+                        <ul>
+                            <li>의류</li>
+                            <li>신발</li>
+                            <li>용품</li>
+                            <li>베스트</li>
+                            <li>신상품</li>
+                            <li>세일</li>
+                        </ul>
+                    </div>
+
+                    <div class="foot_menu04">
+                        <h4>BRAND</h4>
+                        <ul>
+                            <li>About Fila</li>
+                            <li>Collaboration</li>
+                            <li>Sustainability</li>
+                            <li>Athelete</li>
+                            <li>Tennis Stories</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!--footer box 1-->
+
+                <div class="footer_box2">
+
+                    <div class="foot_menu05">
+                        <div class="foot_menu05_1">
+                            <ul>
+                                <li>매장안내</li>
+                                <li>통합회원 이용약관</li>
+                            </ul>
+                        </div>
+                        <!--menu 05_1 end-->
+
+                        <div class="foot_menu05_1">
+                            <ul>
+                                <li>공지사항</li>
+                                <li class="red">개인정보처리방침</li>
+                            </ul>
+                        </div>
+                        <!--menu 05_1 end-->
+
+                        <div class="foot_menu05_1">
+                            <ul>
+                                <li>FILA Membership</li>
+                                <li>제보센터</li>
+                            </ul>
+                        </div>
+                        <!--menu 05_1 end-->
+
+                        <div class="foot_menu05_1">
+                            <ul>
+                                <li>대리점개설문의</li>
+                                <li class="blue">Korea</li>
+                            </ul>
+                        </div>
+                        <!--menu 05_1 end-->
+
+                        <div class="foot_menu05_1">
+                            <ul>
+                                <li>Fila 입찰 참여 안내</li>
+                                <li>
+                                    <select name="family_site" id="family_site">
+                                        <option>Family Site</option>
+                                        <option value="family1">KEDS 온라인스토어</option>
+                                        <option value="family2">ZooYork 온라인스토어</option>
+                                        <option value="family3">FILA 입찰공고</option>
+                                        <option value="family3">FILA Holdings</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--menu 05_1 end-->
+
+
+
+                    </div>
+                    <!--menu 05 end-->
+
+                </div>
+                <!--footer box2 end-->
+
+                <div class="footer_box3">
+
+                    <div class="menu06">
+
+                        <div class="menu06_1">
+
+                            <div class="menu06_desc">
+                                <p>
+                                    서울시 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주) 대표이사 : 김지헌<br /><br />
+                                    사업자등록번호 : 716-81-01573 <span class="foot_span01">사업자정보확인</span> 통신판매업신고 : 제
+                                    2020-서울강동-0160호 개인정보 관리책임자 : 이학우<br /><br />
+                                    본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.<br /><br />
+                                    콘텐츠산업진흥법에 의한 콘텐츠보호안내 <span class="foot_span02"> 자세히보기 </span><br />
+                                </p>
+                            </div>
+                            <!--menu06 desc end-->
+
+                        </div>
+                        <!--menu06_1 end-->
+
+                        <div class="menu06_2">
+                            <div class="cs_box">
+                                <p>CS Center</p>
+                            </div>
+                            <!--cs box end-->
+
+                            <h4>1577 - 3472</h4>
+                            <h4>filaonline@fila.com</h4>
+                            <p class="day">평일 월 - 금 : 09시 - 18시 (공휴일 제외)</p>
+
+                        </div>
+                        <!--menu06_2 end-->
+
+                        <div class="menu06_3">
+                            <div class="snsbox">
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-facebook-square"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <!--snsbox end-->
+                        </div>
+                        <!--menu06_3 end-->
+
+                    </div>
+                    <!--menu06 end-->
+
+                </div>
+                <!--footer box3 end-->
+
+
+            </div>
+            <!--footer wrap end-->
+
+
+        </div>
+        <!--container end-->
+
+    </footer>
+
+
+    <div class="quick_menu">
+        <div class="quick_wrap">
+
+            <div class="quick_box">
+                <div class="quick_icon">
+                    <i class="fas fa-user usericon"></i>
+                </div>
+                <!--quick icon-->
+
+                <div class="quick_text">
+                    <a href="#!">로그인</a>
+                </div>
+                <!--quick text-->
+            </div>
+            <!--quick box-->
+
+            <div class="quick_box">
+                <div class="quick_icon">
+                    <i class="fas fa-truck truck"></i>
+                </div>
+                <!--quick icon-->
+
+                <div class="quick_text">
+                    <a href="#!">배송조회</a>
+                </div>
+                <!--quick text-->
+            </div>
+            <!--quick box-->
+
+            <div class="quick_box">
+                <div class="quick_icon">
+                    <i class="fas fa-box-open boxopen"></i>
+                </div>
+                <!--quick icon-->
+
+                <div class="quick_text">
+                    <a href="#!">주문현황</a>
+                </div>
+                <!--quick text-->
+            </div>
+            <!--quick box-->
+
+            <div class="quick_box">
+                <div class="quick_icon">
+                    <i class="fas fa-heart quicksearch"></i>
+                </div>
+                <!--quick icon-->
+
+                <div class="quick_text">
+                    <a href="#!">찜한 상품<span class="heart_cnt">0</span></a>
+                </div>
+                <!--quick text-->
+            </div>
+            <!--quick box-->
+
+
+        </div>
+        <!--quick wrap-->
+    </div>
+    <!--quickmenu end-->
+
+
+    <div class="dir_btn">
+
+        <div class="top_btn">
+            <div class="top_btn_icon">
+                <i class="fas fa-arrow-circle-up"></i>
+            </div>
+        </div>
+
+        <div class="bot_btn">
+            <div class="bot_btn_icon">
+                <i class="fas fa-arrow-circle-down"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="pop_info">
+        <div class="poptxt">
+
+            <p>서브페이지(전체상품) 경로 : nav > women, men, kids <br />하위메뉴에서 전체메뉴 클릭 </p><br />
+            <p>서브페이지2(onepage) 경로 : nav > new & featured <br />하위메뉴에서 영어로된 제목 클릭 </p><br />
+            <p>디테일페이지 경로 : 메인에서 랭킹 스와이퍼와 신제품 스와이퍼 안의<br/> 상품이미지 클릭</p><br />
+
+        </div>
+        <div class="close_pop_info">
+            닫기
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const swiper_visual = new Swiper('.swiper', {
+
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+                delay: 2000
+            },
+
+
+
+
+
+
+            pagination: {
+                el: ".pagination_progress", //페이징 태그 클래스 설정 
+                clickable: true, //버튼 클릭 여부
+                type: 'progressbar', //페이징 타입 설정(종류: bullets, fraction, progressbar)  
+
+
+                // Bullet Numbering 설정
+                // renderBullet: function (index, className) {
+                //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+
+                // }
+
+            },
+
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+        let pagingSwiper = new Swiper(".swiper", {
+            loop: true,
+            pagination: {
+                el: ".pagination_fraction",
+                type: "fraction",
+                renderCustom: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+
+                }
+
+
+
+            },
+
+        });
+
+        swiper_visual.controller.control = pagingSwiper; //controller API
+    </script>
+    <!--swiper visual-->
+
+
+
+
+    <script>
+        const swiper_rank = new Swiper('.swiper_rank', {
+
+            direction: 'horizontal',
+            // init:true,
+            loop: true,
+            // loopedSlides: swiper_rank.length,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 3,
+            spaceBetween: 100,
+            slidesPerGroup: 1,
+            centeredSlides: true,
+            // slidesPerView: "auto",
+            slideToClickedSlide: true,
+            // touchEventsTarget:'wrapper',
+
+
+
+            on: {
+                slideChange: function () {
+                    $('.rank_text .ranklist li').removeClass('on_li');
+                    $('.rank_text .ranklist li').eq(this.realIndex).addClass('on_li');
+
+
+                }
+
+            }
+
+
+        });
+
+        $('.rank_text ul li').click(function (e) {
+            e.preventDefault();
+            let idx = $(this).index(); //
+            swiper_rank.slideToLoop(idx); //
+        });
+
+
+        // rankText.click(function () {
+        //     let idx = $(this).index();
+        //     swiper_rank.slideTo(idx + 1 ,1000,false);
+
+        // }); // index 값 찾기
+    </script>
+
+    <!--rank swiper-->
+
+
+
+
+
+
+
+
+    <script>
+        const swiper_2 = new Swiper('.swiper_2', {
+
+            direction: 'horizontal',
+            loop: true,
+            // spaceBetween: 30,
+            autoplay: {
+                delay: 2000
+            },
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            centeredSlides: true,
+            // spaceBetween: -50,
+            slidesPerView: "auto",
+            // slidesOffsetBefore: 10, // 슬라이드 시작 부분 여백
+            // slidesOffsetAfter: 10, //슬라이드 끝부분 여백
+            roundLengths: true,
+
+            // 페이지네이션
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+
+
+            },
+
+            // 네비게이션
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            //스크롤바
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        });
+    </script>
+    <!--신제품 slider-->
+
+</body>
+
+</html>
