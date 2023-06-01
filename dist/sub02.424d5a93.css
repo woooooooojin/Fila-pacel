@@ -515,7 +515,7 @@ header:hover a {
     
 }
 .sec2_top .sec2_desc p{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 
@@ -548,7 +548,7 @@ header:hover a {
     margin-top: 10px;
 }
 .sec2_bot ul li .bot_desc{
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 20px;
 }
 .sec2_bot ul li .bot_more{
@@ -637,7 +637,7 @@ header:hover a {
     width: 100%;
     height: 500px;
     padding: 0 20px;
-    padding-top: 50px;
+    /* padding: 50px 0; */
     /* overflow: hidden; */
     /* display: none; */
 }
@@ -810,7 +810,7 @@ header:hover a {
     width: 100%;
     height: 100vh;
     border-top: 1px solid #ccc;
-    
+    margin-top: 50px;
 }
 
 .section04_wrap{
@@ -870,7 +870,7 @@ header:hover a {
 footer{
     width: 100%;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 .footer_wrap{

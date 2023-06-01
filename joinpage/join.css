@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/*font-family: 'Noto Sans KR', sans-serif;*/
+
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.container {
+    width: 1276px;
+    margin: 0 auto;
+}
+
+.form_wrap{
+    width: 700px;
+    margin: 0 auto;
+}
+
+.join_form{
+    margin-top: 100px;
+}
+.logo_box{
+    width: 100px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.logo_box img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.join_tit{
+    margin-top: 30px;
+    width: 100%;
+}
+.tit_wrap{
+    border-bottom: 1px solid #ccc;
+}
+.tit_wrap p{
+    font-size: 28px;
+}
+
+.join_form{
+    width: 100%;
+}
+
+.form_wrap li:nth-child(1) label,
+.form_wrap li:nth-child(2) label,
+.form_wrap li:nth-child(3) label,
+.form_wrap li:nth-child(4) label,
+.form_wrap li:nth-child(5) label{
+    font-size: 18px;
+    display: block;
+    margin: 20px 0 10px 0;
+}
+
+.form_wrap li #user_id,
+.form_wrap li #user_pw1,
+.form_wrap li #user_pw2,
+.form_wrap li #user_name{
+    display: block;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    
+}
+
+.id_box>p,
+.pw1_box>p,
+.pw2_box>p{
+    font-size: 12px;
+}
+.id_box .id_true,
+.pw1_box .pw1_true,
+.pw2_box .pw2_true{
+    color: blue;
+    display: none;
+}
+.id_box .id_false,
+.pw1_box .pw1_false,
+.pw2_box .pw2_false{
+    color: red;
+    display: none;
+}
+
+.pw1_box{
+    /* position: relative; */
+}
+.input_wrap01{
+    position: relative;
+}
+.pw1_box i{
+    position: absolute;
+    right: 2%;
+    bottom: 50%;
+    transform: translateY(50%);
+    
+    font-size: 25px;
+}
+
+.pw2_box{
+    /* position: relative; */
+}
+.input_wrap02{
+    position: relative;
+}
+.pw2_box i{
+    position: absolute;
+    right: 2%;
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 25px;
+}
+
+#user_year,
+#user_month,
+#user_day{
+    height: 50px;
+    width: 220px;
+}
+#user_month{
+   margin-left: 15px;
+}
+#user_day{
+    margin-left: 15px;
+}
+
+.gender_box {
+    margin-top: 20px;
+}
+.gender_box>label{
+    font-size: 18px;
+}
+.gender_box select{
+    display: block;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    margin-top: 10px;
+}
+.phone_box{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.phone_box>label{
+    font-size: 18px;
+}
+
+.phone_box_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.phone_box select{
+   
+    width: 200px;
+    height: 50px;
+}
+.phone_box #phone_second{
+    width: 200px;
+    height: 50px;
+}
+.phone_box #phone_third{
+    width: 200px;
+    height: 50px;
+}
+.phone_box .dash{
+    font-size: 25px;
+}
+#check01,
+#check02,
+#check03,
+#check04,
+#check05,
+#check06{
+    margin-top: 10px;
+ 
+   
+}
+.chk_label{
+    display: inline-block;
+    width: 90%;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.chk_see{
+    text-align: right;
+    cursor: pointer;
+}
+
+.login_btn{
+    width: 100%;
+    height: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #002053;
+    border:0;
+    outline: none;
+    font-size: 24px;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+.login_btn:hover{
+    box-shadow: 0 0 15px black;
+    border: 0;
+}
+
+.modal_popup{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    display: none;
+
+}
+.modal_popup .pop_wrap{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.modal_popup .pop_wrap .pop_text{
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal_popup .pop_wrap .close_btn{
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.modal_popup .pop_wrap .pop_text p{
+    
+}

@@ -118,6 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/detail.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 window.addEventListener('mouseover', function () {
   var mainLogo = document.querySelector('.logoimg');
   var lnbA = document.querySelectorAll('.head_lnb li');
@@ -286,26 +292,30 @@ document.addEventListener('DOMContentLoaded', function () {
       numberSpan.innerHTML = Rcnt;
     }
     plusCnt();
+    var Rstars = document.querySelector('.review_star'); //사용자가 누르는 별
     var starBox = document.createElement('div');
-    starBox.setAttribute('class', 'inner_stars');
+    starBox.setAttribute('class', 'inner_stars'); //리뷰에 나오는별
     Li.appendChild(starBox);
+    starBox.innerHTML = Rstars.innerHTML; //별점 생성 
 
     // 별
-    var star1 = document.createElement('i');
-    star1.setAttribute('class', 'fas fa-star');
-    starBox.appendChild(star1);
-    var star2 = document.createElement('i');
-    star2.setAttribute('class', 'fas fa-star');
-    starBox.appendChild(star2);
-    var star3 = document.createElement('i');
-    star3.setAttribute('class', 'fas fa-star');
-    starBox.appendChild(star3);
-    var star4 = document.createElement('i');
-    star4.setAttribute('class', 'fas fa-star');
-    starBox.appendChild(star4);
-    var star5 = document.createElement('i');
-    star5.setAttribute('class', 'fas fa-star');
-    starBox.appendChild(star5);
+    // const star1 = document.createElement('i')
+    // star1.setAttribute('class', 'far fa-star rstar')
+    // starBox.appendChild(star1)
+
+    // const star2 = document.createElement('i')
+    // star2.setAttribute('class', 'far fa-star rstar')
+    // starBox.appendChild(star2)
+    // const star3 = document.createElement('i')
+    // star3.setAttribute('class', 'far fa-star rstar')
+    // starBox.appendChild(star3)
+    // const star4 = document.createElement('i')
+    // star4.setAttribute('class', 'far fa-star rstar')
+    // starBox.appendChild(star4)
+    // const star5 = document.createElement('i')
+    // star5.setAttribute('class', 'far fa-star rstar')
+    // starBox.appendChild(star5)
+
     var txtBox = document.createElement('div');
     txtBox.setAttribute('class', 'inner_txt');
     Li.appendChild(txtBox);
@@ -343,6 +353,40 @@ document.addEventListener('DOMContentLoaded', function () {
       R_List.removeChild(Li);
     });
   });
+
+  ////별점 추가 리뷰
+  var innerStar = document.querySelectorAll('.inner_stars');
+  var reviewStar = document.querySelector('.review_star');
+  var ratingStars = _toConsumableArray(document.getElementsByClassName("star1"));
+  var ratingResult = document.querySelector(".rating_result");
+  var rStar = document.querySelectorAll('.rstar'); //dom 별
+
+  printRatingResult(ratingResult);
+  function executeRating(stars, result) {
+    var starClassActive = "star1 fas fa-star";
+    var starClassUnactive = "star1 far fa-star";
+    var starsLength = stars.length;
+    var i;
+    stars.map(function (star) {
+      star.onclick = function () {
+        i = stars.indexOf(star);
+        if (star.className.indexOf(starClassUnactive) !== -1) {
+          printRatingResult(result, i + 1);
+          for (i; i >= 0; i--) stars[i].className = starClassActive;
+        } else {
+          printRatingResult(result, i);
+          for (i; i < starsLength; i++) stars[i].className = starClassUnactive;
+        }
+      };
+    });
+  }
+  function printRatingResult(result) {
+    var num = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    result.textContent = "".concat(num, "/5");
+  }
+  executeRating(ratingStars, ratingResult);
+
+  ///////////////////////////////////////////////////
 
   //주문수량, 가격 event
 
@@ -445,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function () {
     noticeClose.appendChild(noticeI);
 
     ////re
-    var noticeRe = document.createElement('div');
+    var noticeRe = document.createElement('ul');
     noticeRe.setAttribute('class', 'Re_list');
     noticeLi.appendChild(noticeRe);
     noticeList.appendChild(noticeLi);
@@ -465,10 +509,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var reClose = document.getElementById('re_close');
   var rePop = document.querySelector('.re_pop');
   var registBtn = document.getElementById('re_btn');
-  var noticefor = document.querySelector('.notice_inner');
   registBtn.addEventListener('click', function () {
     var noticeLi = document.querySelector('.Re_list');
-    var reply = document.createElement('div');
+    var reply = document.createElement('li');
     reply.setAttribute('class', 'reply_box');
     var replySpan = document.createElement('span');
     replySpan.setAttribute('class', 'reply_span');
@@ -485,8 +528,9 @@ document.addEventListener('DOMContentLoaded', function () {
     noticeLi.appendChild(reply);
     replyDel.addEventListener('click', function () {
       noticeLi.removeChild(reply);
-    });
+    }); ///자식제거
   });
+
   registBtn.addEventListener('click', function () {
     reTxt.value = '';
   });
@@ -514,6 +558,72 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// const ratingStars = [...document.getElementsByClassName("star1")];
+// const ratingResult = document.querySelector(".rating__result");
+
+// printRatingResult(ratingResult);
+
+// function executeRating(stars, result) {
+//    const starClassActive = "star1 fas fa-star";
+//    const starClassUnactive = "star1 far fa-star";
+//    const starsLength = stars.length;
+//    let i;
+//    stars.map((star) => {
+//       star.onclick = () => {
+//          i = stars.indexOf(star);
+
+//          if (star.className.indexOf(starClassUnactive) !== -1) {
+//             printRatingResult(result, i + 1);
+//             for (i; i >= 0; --i) stars[i].className = starClassActive;
+//          } else {
+//             printRatingResult(result, i);
+//             for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+//          }
+//       };
+//    });
+// }
+
+// function printRatingResult(result, num = 0) {
+//    result.textContent = `${num}/5`;
+// }
+
+// executeRating(ratingStars, ratingResult);
+
+///photo review
+
+var inputFile = document.getElementById('input_file');
+// let imgsrc = document.querySelector('.img_wrap img')
+var imgBtn = document.querySelector('.upload'); //버튼
+var labelName = document.getElementById('label_name'); //라벨
+// const photoLi = document.querySelector('.photolist li')
+
+var photoList = document.querySelector('.photolist');
+imgBtn.addEventListener('click', function () {
+  // imgsrc.src = URL.createObjectURL(inputFile.files[0])
+
+  var lis = document.createElement('li');
+  var imgWrap = document.createElement('div');
+  imgWrap.setAttribute('class', 'img_wrap');
+  lis.appendChild(imgWrap);
+  var photoImg = document.createElement('img');
+  imgWrap.appendChild(photoImg);
+  photoImg.src = URL.createObjectURL(inputFile.files[0]);
+  var delPhoto = document.createElement('div');
+  delPhoto.setAttribute('class', 'photo_del');
+  delPhoto.innerHTML = 'X';
+  lis.appendChild(delPhoto);
+  photoList.appendChild(lis);
+  labelName.textContent = '사진 업로드 click !';
+  delPhoto.addEventListener('click', function () {
+    photoList.removeChild(lis);
+  });
+});
+inputFile.addEventListener('change', function () {
+  // if (inputFile.files[0]) {
+  labelName.textContent = inputFile.files[0].name;
+  // }
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -539,7 +649,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49941" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53694" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

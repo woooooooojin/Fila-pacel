@@ -10,8 +10,8 @@ let x = setInterval(function () {
     let minutes = Math.floor((timeOut % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeOut % (1000 * 60)) / 1000);
 
-    document.getElementById('count_time').innerHTML = days + ' 일 ' + hours + ' 시간 ' + minutes + ' 분 ' +
-        seconds + ' 초';
+    document.getElementById('count_time').innerHTML = days + '일 ' + hours + ' : ' + minutes + ' : ' +
+        seconds + ' ';
 
 
     if (timeOut < 0) {

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <script src="./js/join.js" defer></script>
+    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="logo_box">
+        <img src="../img/LOGO/logo01.png" alt="logo">
+    </div>
+
+    <div class="join_tit">
+        <div class="container">
+            <div class="tit_wrap">
+                <p>회원가입</p>
+            </div>
+
+        </div>
+    </div>
+    <!--join tit-->
+
+
+    <div class="join_form">
+        <div class="container">
+            <form action="">
+
+                <ul class="form_wrap">
+                    <li class="id_box">
+                        <label for="user_id">아이디</label>
+                        <input type="text" id="user_id" placeholder="6자 ~ 16자 입력" required autofocus>
+                        <p class="id_true">사용가능한 아이디 입니다.</p>
+                        <p class="id_false">사용불가한 아이디 입니다. 영소문자,숫자로 구성된 6글자 이상으로 입력하세요.</p>
+                    </li>
+
+                    <li class="pw1_box">
+                        <label for="user_pw1" class="user_lock1">비밀번호</label>
+                        <div class="input_wrap01">
+                            <input type="password" id="user_pw1" placeholder="6자 ~ 16자 입력" required autofocus>
+                            <i class="fas fa-lock lock_1"></i>
+                        </div>
+
+                        <p class="pw1_true">사용가능한 비밀번호 입니다.</p>
+                        <p class="pw1_false">사용불가한 비밀번호 입니다. 영소문자,대문자,숫자로 구성된 8글자 이상으로 입력하세요.</p>
+                    </li>
+
+                    <li class="pw2_box">
+                        <label for="user_pw2">비밀번호 재확인</label>
+                        <div class="input_wrap02">
+                            <input type="password" id="user_pw2">
+                            <i class="fas fa-lock lock_2"></i>
+                        </div>
+
+                        <p class="pw2_true">비밀번호가 일치합니다.</p>
+                        <p class="pw2_false">비밀번호가 일치하지 않습니다.</p>
+                    </li>
+
+                    <li class="name_box">
+                        <label for="user_name">이름</label>
+                        <input type="text" id="user_name">
+                    </li>
+
+                    <li class="birth_box">
+                        <label for="user_birth">생년월일</label>
+                        <input type="text" id="user_year" placeholder="년(4자)" maxlength="4">
+                        <input type="text" id="user_month" placeholder="월(2자 (ex)05월)" maxlength="2">
+                        <input type="text" id="user_day" placeholder="일(2자 (ex)05일)" maxlength="2">
+                    </li>
+
+                    <li class="gender_box">
+                        <label for="user_gender">성별</label>
+                        <select name="user_gender" id="user_gender">
+
+                            <option value="">선택하세요</option>
+                            <option value="male">남자</option>
+                            <option value="female">여자</option>
+
+                        </select>
+
+
+                    </li>
+
+                    <li class="phone_box">
+                        <label for="user_phone">휴대전화</label>
+                        <div class="phone_box_wrap">
+                            <select name="phone_first" id="phone_first">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                            </select>
+                            <label for="" class="dash">-</label>
+                            <input type="text" id="phone_second" maxlength="4">
+                            <label for="" class="dash">-</label>
+                            <input type="text" id="phone_third" maxlength="4">
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="check01" class="need">
+                        <label for="check01" class="chk_label">필수 전체동의</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="check02" class="chk_el">
+                        <label for="check02" class="chk_label">비회원 개인정보 수집 및 이용동의(필수)</label>
+                        <span class="chk_see span02">보기</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="check03" class="chk_el">
+                        <label for="check03" class="chk_label">위치기반 서비스 이용약관 동의(필수)</label>
+                        <span class="chk_see span03">보기</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="check04" class="chk_el">
+                        <label for="check04" class="chk_label">본인은 14세 이상입니다(필수)</label>
+                        <span class="chk_see span04">보기</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="check05" class="chk_el">
+                        <label for="check05" class="chk_label">이용약관 동의(필수)</label>
+                        <span class="chk_see span05">보기</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="check06" class="chk_el">
+                        <label for="check06" class="chk_label">마케팅 정보 이용(선택)</label>
+                        <span class="chk_see span06">보기</span>
+                    </li>
+
+
+                    <li>
+                        <button type="button" id="log_in" class="login_btn">회원가입</button>
+                    </li>
+
+                </ul>
+
+            </form>
+
+
+        </div>
+        <!--container end-->
+    </div>
+    <!--join form end-->
+
+
+    <div class="modal_popup pop01">
+        <div class="pop_wrap">
+            <div class="pop_text">
+                <p>
+                    청오디피케이㈜는(이하 “회사”는) 고객님의 개인정보를 중요시하며, 개인정보보호를 위해 “정보통신망 이용촉진 및 정보보호에 관한 법률”, “통신비밀보호법”, “개인정보보호법” 등
+                    정보통신서비스제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보 처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 회사는
+                    개인정보 처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+                    위치기반서비스사업에 연관된 개인위치정보 처리에 관한 내용은 본 개인정보 처리방침을 통해서도 고지되오나 보다 자세한 내용은 위치기반서비스 이용약관을 통해 확인이 가능합니다.
+                </p>
+                <div class="close_btn close01">
+                    X
+                </div>
+            </div>
+
+
+        </div>
+        <!--popwrap-->
+    </div>
+
+    <div class="modal_popup pop02">
+        <div class="pop_wrap">
+            <div class="pop_text">
+                <p>
+                    이용자의 개인정보는 원칙적으로 개인정보와 수집 및 이용목적이 달성되면 지체 없이 파기 또는 분리보관 합니다. 회사의 개인정보 파기 및 분리보관 절차와 방법은 다음과 같습니다.
+
+                    1. 파기절차
+                    ① 이용자가 회원가입 등을 위해 입력한 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 보관장소) 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간
+                    참조)일정 기간 저장된 후 파기됩니다.
+                    ② 동 개인정보는 법률에 의한 경우가 아니고서는 보유되는 이외의 다른 목적으로 이용되지 않습니다.
+                    ③ 보존기간이 경과한 정보 관련 문서(대외비, 기밀)는 정보보호관리자의 승인을 받아 폐기합니다.
+                    2. 파기방법
+                    ① 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
+                    ② 전자적 파일 형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법(재사용 시 덮어쓰기, 로우(low)포맷 등)을 사용하여 삭제합니다.
+                    3. 개인정보 유효기간 제도 도입
+                    ① 당사는 회원가입시 개인정보유효기간을 선택할 수 있으며(1년, 3년, 5년) 선택한 기간 동안 서비스 미이용시 회원의 개인정보보호를 위하여 2015년 8월 18일부로 다른
+                    이용자의 개인정보와 분리하여 저장, 관리합니다.
+                    ② 미이용의 기간은 최종 로그인 일자 및 주문이력으로 산정하며 법령에서 정의한 기간 동안 서비스 미이용자에 대하여 분리, 저장, 관리합니다.
+                    ③ 당사는 미이용자 개인정보 분리/저장시점 도래 1개월 이전에 이메일 등을 통해 해당 이용자에게 관련내용을 공지합니다.
+                    ④ 분리 저장된 회원의 개인정보는 1년간 보관 후 지체없이 파기합니다.
+                </p>
+                <div class="close_btn close02">
+                    X
+                </div>
+            </div>
+
+
+        </div>
+        <!--popwrap-->
+    </div>
+
+
+    <div class="modal_popup pop03">
+        <div class="pop_wrap">
+            <div class="pop_text">
+                <p>
+                    1. 이용자 및 법정대리인은 회사에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
+
+                    ① 개인정보 (개인위치정보 포함) 열람요구
+                    ② 오류 등이 있을 경우 정정 요구
+                    ③ 삭제요구
+                    ④ 처리정지 요구
+                    2. 권리 행사는 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.
+
+                    3. 이용자 및 법정대리인이 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에 회사는 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.
+
+                    4. 권리 행사는 이용자의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 위임장을 작성하여 제출하셔야 합니다.
+
+                    5. 회사는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제된 개인정보는 「개인정보의 보유 및 이용기간」에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수
+                    없도록 처리하고 있습니다.
+                </p>
+                <div class="close_btn close03">
+                    X
+                </div>
+            </div>
+
+
+        </div>
+        <!--popwrap-->
+    </div>
+
+    <div class="modal_popup pop04">
+        <div class="pop_wrap">
+            <div class="pop_text">
+                <p>
+                    회사는 이용자들에게 특화된 맞춤서비스를 제공하기 위해서 이용자들의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다. 쿠키는 웹사이트를 운영하는데 이용되는
+                    서버(HTTP)가 이용자의 컴퓨터 브라우저에게 보내는 소량의 정보이며 이용자들의 PC 컴퓨터내의 하드디스크에 저장되기도 합니다. 쿠키는 개인을 식별하는 정보를 자동적/능동적으로
+                    수집하지 않으며, 이용자는 언제든지 이러한 쿠키의 저장을 거부하거나 삭제할 수 있습니다.
+
+                    1. 쿠키의 사용 목적
+                    이용자들이 방문한 도미노피자의 각 서비스와 웹 사이트들에 대한 방문 및 이용형태, 인기 검색어, 보안접속 여부, 뉴스편집(도미노 소식), 이용자 규모 등을 파악하여 이용자에게
+                    최적화된 정보 제공을 위하여 사용합니다. 회사는 고객에게 더 나은 서비스를 제공하기 위한 목적으로 Google, Inc. (이하 ‘Google’)이 제공하는 웹 분석 서비스인
+                    Google Analytics를 사용하여 익명의 쿠키정보(인구통계학적 데이터 등) 수집을 통해 고객들이 회사의 서비스를 어떻게 이용하는지 분석 및 평가하고 고객의 수요를 파악하며,
+                    서비스와 제품을 개선하고 맞춤화하여 효율적인 서비스를 제공하는 것에 목적이 있습니다.
+
+                    Google Analytics를 통해 수집되는 정보의 처리는 Google 개인정보보호정책과 Google Analytics 이용약관을 적용 받습니다.
+                    - Google 개인정보보호정책 : https://www.google.com/intl/ko/policies/privacy/
+                    - Google Analytics 이용약관 : https://www.google.com/analytics/terms/kr.html
+
+
+
+                </p>
+                <div class="close_btn close04">
+                    X
+                </div>
+            </div>
+
+
+        </div>
+        <!--popwrap-->
+    </div>
+
+
+    <div class="modal_popup pop05">
+        <div class="pop_wrap">
+            <div class="pop_text">
+                <p>
+                    회사는 회원이 탈퇴하거나 제16조에 따라 동의를 철회하는 경우, 지체 없이 수집된 회원정보를 파기하는 등 필요한 조치를 취합니다.
+
+                    (1) 회사는 관련 법령에 특별한 규정이 있는 경우나 이용자의 별도 동의를 받지 않는 한 개인정보를 제3자에게 제공하지 않습니다.
+                    (2) 고객이 서비스 가입 등을 위해 기재한 개인정보는 회원 탈퇴 등 이용목적이 달성된 후 내부 방침에 따라 지체 없이 파기합니다.
+                    (3) 파기방법
+                    종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기한다. 전자적 파일 형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 조치를 통하여 삭제한다.
+
+                    (4)개인정보 유효기간 제도 도입 (1년/3년/5년)- 당사는 회원의 경우 장기간(1년 이상) 서비스 미이용자의 개인정보보호를 위하여 2015년 8월 18일부로 다른 이용자의
+                    개인정보와 분리하여 저장, 관리합니다.
+                    - 미이용의 기간은 최종 로그인 일자 및 주문이력으로 산정하며 법령에서 정의한 기간 동안 서비스 미이용자에 대하여 분리, 저장, 관리합니다.
+                    - 당사는 미이용자 개인정보 분리/저장시점 도래 1개월 이전에 이메일 등을 통해 해당 이용자에게 관련내용을 공지합니다.
+                    - 분리 저장된 미이용자 개인정보는 관련 법령에 따라 1년간 보유하며, 해당 기간 종료 후 파기됩니다. 해당 기간이 지나지 않아 파기되지 않은 개인정보는 해당 회원의 요청에 따라
+                    서비스 이용을 재개하는 시점에 다시 제공됩니다.
+
+
+
+                </p>
+                <div class="close_btn close05">
+                    X
+                </div>
+            </div>
+
+
+        </div>
+        <!--popwrap-->
+    </div>
+
+
+
+
+</body>
+
+</html>

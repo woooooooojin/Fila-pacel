@@ -22,8 +22,18 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
 }
+body::-webkit-scrollbar-thumb{
+    background: #002053;
+    height: 300px;
 
 
+}
+body::-webkit-scrollbar {
+    width: 13px; 
+}
+body::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1); 
+}
 /************countdown popup*************/
 .countdown {
     width: 400px;
@@ -1322,7 +1332,7 @@ header:hover a {
     }
 
     100% {
-        width: 55%;
+        width: 58%;
     }
 
 
@@ -1647,6 +1657,8 @@ header:hover a {
     position: relative;
     margin-bottom: 40px;
     transition: .3s;
+    opacity: 0;
+
 }
 .sns_wrap .sns_box:hover{
     box-shadow: 0 0 20px black;
@@ -1763,36 +1775,36 @@ header:hover a {
 }
 
 
-.origin{opacity: 0;}
+/* .origin{opacity: 0;}
 .show .origin{
     opacity: 1;
     transition: 1s;
+} */
+.sns_wrap{overflow: hidden;}
+.sbox01{
+    transform: translateY(1000px);
 }
 
-.show .sbox01{
-    transition-delay: 0s;
+.sbox02{
+    transform: translateY(1000px);
 }
-
-.show .sbox02{
-    transition-delay: .2s;
+.sbox03{
+    transform: translateY(1000px);
 }
-.show .sbox03{
-    transition-delay: .4s;
+.sbox04{
+    transform: translateY(1000px);
 }
-.show .sbox04{
-    transition-delay: .6s;
+.sbox05{
+    transform: translateY(-1000px);
 }
-.show .sbox05{
-    transition-delay: .8s;
+.sbox06{
+    transform: translateY(-1000px);
 }
-.show .sbox06{
-    transition-delay: 1s;
+.sbox07{
+    transform: translateY(-1000px);
 }
-.show .sbox07{
-    transition-delay: 1.2s;
-}
-.show .sbox08{
-    transition-delay: 1.4s;
+.sbox08{
+    transform: translateY(-1000px);
 }
 /*********footer********/
 footer{

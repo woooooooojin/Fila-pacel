@@ -105,39 +105,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const recentNo = document.querySelector('.noresearch')
 
     //검색창 검색어 추가/삭제
-    searchInput.addEventListener('change',function(){
+    searchInput.addEventListener('change', function () {
         recentNo.style.display = 'none'
 
         const searchLi = document.createElement('li')
-        searchLi.setAttribute('class','searchli')
+        searchLi.setAttribute('class', 'searchli')
         recentList.appendChild(searchLi)
         searchLi.innerHTML = searchInput.value
         searchInput.value = ''
         searchInput.focus()
 
         const liDel = document.createElement('span')
-        liDel.setAttribute('class','lidel')
+        liDel.setAttribute('class', 'lidel')
         searchLi.appendChild(liDel)
         liDel.innerHTML = 'X'
 
-        liDel.addEventListener('click',function(){
+        liDel.addEventListener('click', function () {
             recentList.removeChild(searchLi)
         })
 
         const researchAllDel = document.querySelector('.delete_history')
-        researchAllDel.addEventListener('click',function(){
+        researchAllDel.addEventListener('click', function () {
 
             recentList.innerHTML = ''
             recentNo.style.display = 'block'
 
         })
 
-        
+
     })
 
 
-    
-    
+
+
 
 
 
@@ -266,29 +266,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+        const Rstars = document.querySelector('.review_star') //사용자가 누르는 별
         const starBox = document.createElement('div')
-        starBox.setAttribute('class', 'inner_stars')
+        starBox.setAttribute('class', 'inner_stars') //리뷰에 나오는별
         Li.appendChild(starBox)
+        starBox.innerHTML = Rstars.innerHTML //별점 생성 
+
+
 
 
         // 별
-        const star1 = document.createElement('i')
-        star1.setAttribute('class', 'fas fa-star')
-        starBox.appendChild(star1)
+        // const star1 = document.createElement('i')
+        // star1.setAttribute('class', 'far fa-star rstar')
+        // starBox.appendChild(star1)
 
-        const star2 = document.createElement('i')
-        star2.setAttribute('class', 'fas fa-star')
-        starBox.appendChild(star2)
-        const star3 = document.createElement('i')
-        star3.setAttribute('class', 'fas fa-star')
-        starBox.appendChild(star3)
-        const star4 = document.createElement('i')
-        star4.setAttribute('class', 'fas fa-star')
-        starBox.appendChild(star4)
-        const star5 = document.createElement('i')
-        star5.setAttribute('class', 'fas fa-star')
-        starBox.appendChild(star5)
+        // const star2 = document.createElement('i')
+        // star2.setAttribute('class', 'far fa-star rstar')
+        // starBox.appendChild(star2)
+        // const star3 = document.createElement('i')
+        // star3.setAttribute('class', 'far fa-star rstar')
+        // starBox.appendChild(star3)
+        // const star4 = document.createElement('i')
+        // star4.setAttribute('class', 'far fa-star rstar')
+        // starBox.appendChild(star4)
+        // const star5 = document.createElement('i')
+        // star5.setAttribute('class', 'far fa-star rstar')
+        // starBox.appendChild(star5)
 
 
         const txtBox = document.createElement('div')
@@ -352,7 +355,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
     })
+
+    ////별점 추가 리뷰
+    const innerStar = document.querySelectorAll('.inner_stars')
+    const reviewStar = document.querySelector('.review_star')
+    const ratingStars = [...document.getElementsByClassName("star1")]
+    const ratingResult = document.querySelector(".rating_result")
+    const rStar = document.querySelectorAll('.rstar') //dom 별
+
+    printRatingResult(ratingResult)
+
+    function executeRating(stars, result) {
+        const starClassActive = "star1 fas fa-star"
+        const starClassUnactive = "star1 far fa-star"
+        const starsLength = stars.length
+        let i;
+        stars.map((star) => {
+            star.onclick = () => {
+                i = stars.indexOf(star)
+
+                if (star.className.indexOf(starClassUnactive) !== -1) {
+                    printRatingResult(result, i + 1)
+                    for (i; i >= 0; i--) stars[i].className = starClassActive
+
+                } else {
+                    printRatingResult(result, i);
+                    for (i; i < starsLength; i++) stars[i].className = starClassUnactive
+                }
+            }
+        })
+    }
+
+    function printRatingResult(result, num = 0) {
+        result.textContent = `${num}/5`
+    }
+
+    executeRating(ratingStars, ratingResult)
+
+
+    
+    ///////////////////////////////////////////////////
+
 
 
 
@@ -490,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function () {
         noticeClose.appendChild(noticeI)
 
         ////re
-        const noticeRe = document.createElement('div')
+        const noticeRe = document.createElement('ul')
         noticeRe.setAttribute('class', 'Re_list')
         noticeLi.appendChild(noticeRe)
 
@@ -526,17 +572,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const reClose = document.getElementById('re_close')
     const rePop = document.querySelector('.re_pop')
     const registBtn = document.getElementById('re_btn')
-    const noticefor = document.querySelector('.notice_inner')
+
 
 
 
     registBtn.addEventListener('click', function () {
 
-
         const noticeLi = document.querySelector('.Re_list')
 
 
-        const reply = document.createElement('div')
+
+        const reply = document.createElement('li')
         reply.setAttribute('class', 'reply_box')
 
         const replySpan = document.createElement('span')
@@ -562,15 +608,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
         replyDel.addEventListener('click', function () {
+
             noticeLi.removeChild(reply)
 
-        })
-
-
+        }) ///자식제거
 
 
 
@@ -578,6 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     })
+
 
     registBtn.addEventListener('click', function () {
         reTxt.value = ''
@@ -592,7 +635,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    
+
 
     //장바구니 카트 클릭이벤트
     const cart2 = document.querySelectorAll('.cart_box')
@@ -633,4 +676,91 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+})
+
+
+
+
+// const ratingStars = [...document.getElementsByClassName("star1")];
+// const ratingResult = document.querySelector(".rating__result");
+
+// printRatingResult(ratingResult);
+
+// function executeRating(stars, result) {
+//    const starClassActive = "star1 fas fa-star";
+//    const starClassUnactive = "star1 far fa-star";
+//    const starsLength = stars.length;
+//    let i;
+//    stars.map((star) => {
+//       star.onclick = () => {
+//          i = stars.indexOf(star);
+
+//          if (star.className.indexOf(starClassUnactive) !== -1) {
+//             printRatingResult(result, i + 1);
+//             for (i; i >= 0; --i) stars[i].className = starClassActive;
+//          } else {
+//             printRatingResult(result, i);
+//             for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+//          }
+//       };
+//    });
+// }
+
+// function printRatingResult(result, num = 0) {
+//    result.textContent = `${num}/5`;
+// }
+
+// executeRating(ratingStars, ratingResult);
+
+
+
+
+
+
+///photo review
+
+
+
+
+const inputFile = document.getElementById('input_file')
+// let imgsrc = document.querySelector('.img_wrap img')
+const imgBtn = document.querySelector('.upload') //버튼
+const labelName = document.getElementById('label_name') //라벨
+// const photoLi = document.querySelector('.photolist li')
+
+const photoList = document.querySelector('.photolist')
+imgBtn.addEventListener('click', () => {
+    // imgsrc.src = URL.createObjectURL(inputFile.files[0])
+
+    const lis = document.createElement('li')
+
+    const imgWrap = document.createElement('div')
+    imgWrap.setAttribute('class', 'img_wrap')
+    lis.appendChild(imgWrap)
+
+    const photoImg = document.createElement('img')
+    imgWrap.appendChild(photoImg)
+    photoImg.src = URL.createObjectURL(inputFile.files[0])
+
+    const delPhoto = document.createElement('div')
+    delPhoto.setAttribute('class', 'photo_del')
+    delPhoto.innerHTML = 'X'
+    lis.appendChild(delPhoto)
+
+
+    photoList.appendChild(lis)
+    labelName.textContent = '사진 업로드 click !'
+
+
+    delPhoto.addEventListener('click', () => {
+        photoList.removeChild(lis)
+    })
+
+})
+
+inputFile.addEventListener('change', () => {
+
+    // if (inputFile.files[0]) {
+    labelName.textContent = inputFile.files[0].name
+    // }
 })

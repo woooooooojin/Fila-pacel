@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/*font-family: 'Noto Sans KR', sans-serif;*/
+
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.container {
+    width: 1276px;
+    margin: 0 auto;
+}
+
+.form_wrap{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.join_form{
+    margin-top: 100px;
+}
+.logo_box{
+    width: 120px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.logo_box img{
+    width: 100%;
+    height: auto;
+}
+
+
+.join_tit{
+    margin-top: 30px;
+    width: 100%;
+}
+.tit_wrap{
+    border-bottom: 1px solid #ccc;
+}
+.tit_wrap p{
+    font-size: 28px;
+}
+
+.order_info_tit{
+    width: 300px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    background-color: #002053;
+}
+.order_info_tit h4{
+    font-size: 22px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+.order_info>ul{
+    margin-top: 30px;
+}
+.order_info>ul>li{
+    margin-bottom: 20px;
+}
+
+.order_info label{
+    font-size: 18px;
+   
+   
+}
+.order_info input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    outline: none;
+    padding:  0 10px;
+}
+
+
+
+
+
+
+.deliver_info{
+    margin-top: 100px;
+}
+.deliver_info_tit{
+    width: 300px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    background-color: #002053;
+
+}
+.deliver_info_tit h4{
+    font-size: 22px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+.deliver_info>ul>li{
+    margin-bottom: 20px;
+}
+.deliver_info>ul{
+    margin-top: 30px;
+}
+
+.deli_label01{
+    font-size: 16px;
+}
+
+.deliver_info input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    outline: none;
+    padding:  0 10px;
+}
+.deliver_info input:nth-child(1){
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+.orderBtn{
+    width: 100%;
+    height: 60px;
+    background-color: #002053;
+    border: 0;
+    font-size: 20px;
+    margin: 50px 0;
+    transition: .3s;
+    color: #fff;
+}
+.orderBtn:hover{
+    box-shadow: 0 0 10px black;
+    
+}
