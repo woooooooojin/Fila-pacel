@@ -329,29 +329,29 @@ function createPage(val) {
 
 
 
-        // // //맨앞 맨뒤 페이지 좀더 고민,,,
-        // const prevBtn = document.querySelector('.prev_btn')
-        // const nextBtn = document.querySelector('.next_btn')
+        // //맨앞 맨뒤 페이지 좀더 고민,,,
+        const prevBtn = document.querySelector('.prev_btn')
+        const nextBtn = document.querySelector('.next_btn')
 
 
-        // prevBtn.addEventListener('click', function () {
+        prevBtn.addEventListener('click', function () {
 
-        //     nowPage = 0
-        //     paging.innerHTML = ''
+            nowPage = 0
+            paging.innerHTML = ''
 
-        //     sublist.innerHTML = ''
-        //     createPage(val)
+            sublist.innerHTML = ''
+            createPage(val)
 
-        // })
-        // nextBtn.addEventListener('click', function () {
+        })
+        nextBtn.addEventListener('click', function () {
 
-        //     nowPage = pageCount
-        //     paging.innerHTML = ''
+            nowPage = idx
+            paging.innerHTML = ''
 
-        //     sublist.innerHTML = ''
-        //     createPage(val)
+            sublist.innerHTML = ''
+            createPage(val)
 
-        // })
+        })
 
     })
 

@@ -954,31 +954,23 @@ function createPage(val) {
       pageCountBtn[idx].classList.add('active');
     }
 
-    // // //맨앞 맨뒤 페이지 좀더 고민,,,
-    // const prevBtn = document.querySelector('.prev_btn')
-    // const nextBtn = document.querySelector('.next_btn')
-
-    // prevBtn.addEventListener('click', function () {
-
-    //     nowPage = 0
-    //     paging.innerHTML = ''
-
-    //     sublist.innerHTML = ''
-    //     createPage(val)
-
-    // })
-    // nextBtn.addEventListener('click', function () {
-
-    //     nowPage = pageCount
-    //     paging.innerHTML = ''
-
-    //     sublist.innerHTML = ''
-    //     createPage(val)
-
-    // })
+    // //맨앞 맨뒤 페이지 좀더 고민,,,
+    var prevBtn = document.querySelector('.prev_btn');
+    var nextBtn = document.querySelector('.next_btn');
+    prevBtn.addEventListener('click', function () {
+      nowPage = 0;
+      paging.innerHTML = '';
+      sublist.innerHTML = '';
+      createPage(val);
+    });
+    nextBtn.addEventListener('click', function () {
+      nowPage = idx;
+      paging.innerHTML = '';
+      sublist.innerHTML = '';
+      createPage(val);
+    });
   });
 }
-
 createPage(_sub_data.default);
 
 //////////////////select 필터////////////////////////////
@@ -1256,7 +1248,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53694" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53897" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
