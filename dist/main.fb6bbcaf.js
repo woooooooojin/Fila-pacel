@@ -421,57 +421,73 @@ var _NewSwiperData = require("./NewSwiperData.js");
 
 // });
 
-window.addEventListener('mouseover', function () {
-  var mainLogo = document.querySelector('.logoimg');
-  var lnbA = document.querySelectorAll('.head_lnb li');
-  var head = document.querySelector('header');
-  var aTag = document.querySelectorAll('.head_lnb li a');
-  var gnbI = document.querySelectorAll('.head_gnb li a i');
-  if (window.scrollY === 0) {
-    // head.style.backgroundColor = '#fff'
+// window.addEventListener('mouseover', () => {
 
-    mainLogo.setAttribute('src', 'img/LOGO/logo01.png');
-  }
-});
-window.addEventListener('scroll', function (e) {
-  var mainLnb = document.querySelectorAll('.head_lnb ul li a');
-  var mainGnb = document.querySelectorAll('.head_gnb ul li a');
-  var mainLogo = document.querySelector('.head_logo .imgwrap img');
-  if (window.scrollY > 100) {
-    document.querySelector('header').style.backgroundColor = '#fff';
-    mainLogo.setAttribute('src', 'img/LOGO/logo01.png');
-    for (var i = 0; i < mainLnb.length; i++) {
-      mainLnb[i].style.color = 'black';
-    }
-    for (var _i = 0; _i < mainGnb.length; _i++) {
-      mainGnb[_i].style.color = 'black';
-    }
-  } else if (window.scrollY <= 100) {
-    document.querySelector('header').style.backgroundColor = '';
-    mainLogo.setAttribute('src', 'img/LOGO/logo03.png');
-    for (var _i2 = 0; _i2 < mainLnb.length; _i2++) {
-      mainLnb[_i2].style.color = '#fff';
-    }
-    for (var _i3 = 0; _i3 < mainGnb.length; _i3++) {
-      mainGnb[_i3].style.color = '#fff';
-    }
-  }
-});
+//     const mainLogo = document.querySelector('.logoimg');
+//     const lnbA = document.querySelectorAll('.head_lnb li');
+//     const head = document.querySelector('header');
+//     const aTag = document.querySelectorAll('.head_lnb li a')
+//     const gnbI = document.querySelectorAll('.head_gnb li a i')
 
-// header wheel, add remove class event
-window.addEventListener('wheel', function (e) {
-  var headFix = document.querySelector('header');
-  var dropDown = document.querySelector('.dropdown_menu');
-  if (e.deltaY > 10) {
-    headFix.classList.remove("head_up");
-    headFix.classList.add("head_down");
-  } else if (e.deltaY == 0) {
-    headFix.classList.add("head_down");
-  } else if (e.deltaY < -10) {
-    headFix.classList.remove("head_down");
-    headFix.classList.add("head_up");
-  }
-});
+//     if (window.scrollY === 0) {
+
+//         // head.style.backgroundColor = '#fff'
+
+//         mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
+
+//     }
+
+// })
+
+// window.addEventListener('scroll', (e) => {
+
+//     const mainLnb = document.querySelectorAll('.head_lnb ul li a');
+//     const mainGnb = document.querySelectorAll('.head_gnb ul li a');
+//     const mainLogo = document.querySelector('.head_logo .imgwrap img');
+
+//     if (window.scrollY > 100) {
+//         document.querySelector('header').style.backgroundColor = '#fff'
+//         mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = 'black'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = 'black'
+//         }
+
+//     } else if (window.scrollY <= 100) {
+//         document.querySelector('header').style.backgroundColor = ''
+//         mainLogo.setAttribute('src', 'img/LOGO/logo03.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = '#fff'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = '#fff'
+//         }
+
+//     }
+
+// })
+
+// // header wheel, add remove class event
+// window.addEventListener('wheel', (e) => {
+
+//     const headFix = document.querySelector('header');
+//     const dropDown = document.querySelector('.dropdown_menu');
+
+//     if (e.deltaY > 10) {
+//         headFix.classList.remove("head_up");
+//         headFix.classList.add("head_down");
+
+//     } else if (e.deltaY == 0) {
+//         headFix.classList.add("head_down");
+
+//     } else if (e.deltaY < -10) {
+//         headFix.classList.remove("head_down");
+//         headFix.classList.add("head_up");
+//     }
+
+// })
 
 //header wheel, add remove class event
 // window.addEventListener('wheel', (e) => {
@@ -558,43 +574,55 @@ document.addEventListener('DOMContentLoaded', function () {
 // })
 
 //gnb search box  click event
-document.addEventListener('DOMContentLoaded', function () {
-  var searchClose = document.querySelector('.search_close');
-  var searchBox = document.querySelector('.search_box');
-  searchClose.addEventListener('click', function () {
-    searchBox.style.display = 'none';
-  });
-  var gnbSearch = document.querySelector('.gnb_search');
-  gnbSearch.addEventListener('click', function () {
-    searchBox.style.display = 'block';
-  });
-  var searchInput = document.getElementById('searchbox');
-  var recentList = document.querySelector('.recent_search ul');
-  var recentNo = document.querySelector('.noresearch');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const searchClose = document.querySelector('.search_close')
+//     const searchBox = document.querySelector('.search_box')
 
-  //검색창 검색어 추가/삭제
-  searchInput.addEventListener('change', function () {
-    recentNo.style.display = 'none';
-    var searchLi = document.createElement('li');
-    searchLi.setAttribute('class', 'searchli');
-    recentList.appendChild(searchLi);
-    searchLi.innerHTML = searchInput.value;
-    searchInput.value = '';
-    searchInput.focus();
-    var liDel = document.createElement('span');
-    liDel.setAttribute('class', 'lidel');
-    searchLi.appendChild(liDel);
-    liDel.innerHTML = 'X';
-    liDel.addEventListener('click', function () {
-      recentList.removeChild(searchLi);
-    });
-    var researchAllDel = document.querySelector('.delete_history');
-    researchAllDel.addEventListener('click', function () {
-      recentList.innerHTML = '';
-      recentNo.style.display = 'block';
-    });
-  });
-});
+//     searchClose.addEventListener('click', () => {
+//         searchBox.style.display = 'none';
+//     })
+
+//     const gnbSearch = document.querySelector('.gnb_search')
+
+//     gnbSearch.addEventListener('click', () => {
+//         searchBox.style.display = 'block'
+//     })
+
+//     const searchInput = document.getElementById('searchbox')
+//     const recentList = document.querySelector('.recent_search ul')
+//     const recentNo = document.querySelector('.noresearch')
+
+//     //검색창 검색어 추가/삭제
+//     searchInput.addEventListener('change', function () {
+//         recentNo.style.display = 'none'
+
+//         const searchLi = document.createElement('li')
+//         searchLi.setAttribute('class', 'searchli')
+//         recentList.appendChild(searchLi)
+//         searchLi.innerHTML = searchInput.value
+//         searchInput.value = ''
+//         searchInput.focus()
+
+//         const liDel = document.createElement('span')
+//         liDel.setAttribute('class', 'lidel')
+//         searchLi.appendChild(liDel)
+//         liDel.innerHTML = 'X'
+
+//         liDel.addEventListener('click', function () {
+//             recentList.removeChild(searchLi)
+//         })
+
+//         const researchAllDel = document.querySelector('.delete_history')
+//         researchAllDel.addEventListener('click', function () {
+
+//             recentList.innerHTML = ''
+//             recentNo.style.display = 'block'
+
+//         })
+
+//     })
+
+// })
 
 ///////////////////랭킹스와이퍼 카테고리 클릭이벤트//////////////////////////
 
@@ -1051,25 +1079,29 @@ newShoes.addEventListener('click', function () {
 
 // })
 
-//장바구니 카트 클릭이벤트
-var cart2 = document.querySelectorAll('.fa-shopping-cart');
-var cartCount = document.querySelector('.count');
-var cnt = 0;
-cart2.forEach(function (value) {
-  value.addEventListener('click', function () {
-    cnt++;
-    cartCount.innerHTML = cnt;
-  });
-});
-var heart = document.querySelectorAll('.fa-heart');
-var heartCnt = document.querySelector('.heart_cnt');
-var cntheart = 0;
-heart.forEach(function (value) {
-  value.addEventListener('click', function () {
-    cntheart++;
-    heartCnt.innerHTML = cntheart;
-  });
-});
+// //장바구니 카트 클릭이벤트
+// const cart2 = document.querySelectorAll('.fa-shopping-cart')
+// const cartCount = document.querySelector('.count')
+// let cnt = 0
+
+// cart2.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cnt++
+//         cartCount.innerHTML = cnt
+//     })
+// })
+
+// const heart = document.querySelectorAll('.fa-heart')
+// const heartCnt = document.querySelector('.heart_cnt')
+// let cntheart = 0
+
+// heart.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cntheart++
+//         heartCnt.innerHTML = cntheart
+//     })
+// })
+
 var snsEls = document.querySelectorAll('.sns_box');
 // const mgzEls = document.querySelectorAll('.magazine_wrap')
 
@@ -1154,12 +1186,27 @@ closePopInfo.addEventListener('click', function () {
 });
 
 ////////family site location////////
-var family = document.getElementById('family_site');
-family.addEventListener('change', function (event) {
-  var options = event.currentTarget.options;
-  var index = options.selectedIndex;
-  location.href = options[index].value;
-});
+// const family = document.getElementById('family_site')
+// family.addEventListener('change', (event) => {
+
+//     let options = event.currentTarget.options
+//     let index = options.selectedIndex
+
+//     location.href = options[index].value
+
+// })
+
+// window.onload = function () {
+//     const family = document.getElementById('family_site')
+//     family.addEventListener('change', (event) => {
+
+//         let options = event.currentTarget.options
+//         let index = options.selectedIndex
+
+//         location.href = options[index].value
+
+//     })
+// }
 },{"./rankSwiperData.js":"js/rankSwiperData.js","./NewSwiperData.js":"js/NewSwiperData.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1185,7 +1232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54447" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

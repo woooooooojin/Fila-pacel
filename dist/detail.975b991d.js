@@ -539,24 +539,27 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //장바구니 카트 클릭이벤트
-  var cart2 = document.querySelectorAll('.cart_box');
-  var cartCount = document.querySelector('.count');
-  var cnt = 0;
-  cart2.forEach(function (value) {
-    value.addEventListener('click', function () {
-      cnt++;
-      cartCount.innerHTML = cnt;
-    });
-  });
-  var heart = document.querySelectorAll('.like_box');
-  var heartCnt = document.querySelector('.heart_cnt');
-  var cntheart = 0;
-  heart.forEach(function (value) {
-    value.addEventListener('click', function () {
-      cntheart++;
-      heartCnt.innerHTML = cntheart;
-    });
-  });
+  // const cart2 = document.querySelectorAll('.cart_box')
+  // const cartCount = document.querySelector('.count')
+  // let cnt = 0
+
+  // cart2.forEach((value) => {
+  //     value.addEventListener('click', function () {
+  //         cnt++
+  //         cartCount.innerHTML = cnt
+  //     })
+  // })
+
+  // const heart = document.querySelectorAll('.like_box')
+  // const heartCnt = document.querySelector('.heart_cnt')
+  // let cntheart = 0
+
+  // heart.forEach((value) => {
+  //     value.addEventListener('click', function () {
+  //         cntheart++
+  //         heartCnt.innerHTML = cntheart
+  //     })
+  // })
 });
 
 // const ratingStars = [...document.getElementsByClassName("star1")];
@@ -649,7 +652,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54447" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

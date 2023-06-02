@@ -44,90 +44,90 @@
 
 
 
-window.addEventListener('mouseover', () => {
+// window.addEventListener('mouseover', () => {
 
-    const mainLogo = document.querySelector('.logoimg');
-    const lnbA = document.querySelectorAll('.head_lnb li');
-    const head = document.querySelector('header');
-    const aTag = document.querySelectorAll('.head_lnb li a')
-    const gnbI = document.querySelectorAll('.head_gnb li a i')
-
-
-
-
-    if (window.scrollY === 0) {
-
-        // head.style.backgroundColor = '#fff'
-
-        mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
-
-
-
-    }
-
-
-})
+//     const mainLogo = document.querySelector('.logoimg');
+//     const lnbA = document.querySelectorAll('.head_lnb li');
+//     const head = document.querySelector('header');
+//     const aTag = document.querySelectorAll('.head_lnb li a')
+//     const gnbI = document.querySelectorAll('.head_gnb li a i')
 
 
 
 
+//     if (window.scrollY === 0) {
 
-window.addEventListener('scroll', (e) => {
+//         // head.style.backgroundColor = '#fff'
+
+//         mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
 
 
-    const mainLnb = document.querySelectorAll('.head_lnb ul li a');
-    const mainGnb = document.querySelectorAll('.head_gnb ul li a');
-    const mainLogo = document.querySelector('.head_logo .imgwrap img');
 
-    if (window.scrollY > 100) {
-        document.querySelector('header').style.backgroundColor = '#fff'
-        mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
-        for (let i = 0; i < mainLnb.length; i++) {
-            mainLnb[i].style.color = 'black'
-        }
-        for (let i = 0; i < mainGnb.length; i++) {
-            mainGnb[i].style.color = 'black'
-        }
+//     }
 
-    } else if (window.scrollY <= 100) {
-        document.querySelector('header').style.backgroundColor = ''
-        mainLogo.setAttribute('src', 'img/LOGO/logo03.png')
-        for (let i = 0; i < mainLnb.length; i++) {
-            mainLnb[i].style.color = '#fff'
-        }
-        for (let i = 0; i < mainGnb.length; i++) {
-            mainGnb[i].style.color = '#fff'
-        }
 
-    }
+// })
 
 
 
 
-})
+
+// window.addEventListener('scroll', (e) => {
 
 
-// header wheel, add remove class event
-window.addEventListener('wheel', (e) => {
+//     const mainLnb = document.querySelectorAll('.head_lnb ul li a');
+//     const mainGnb = document.querySelectorAll('.head_gnb ul li a');
+//     const mainLogo = document.querySelector('.head_logo .imgwrap img');
 
-    const headFix = document.querySelector('header');
-    const dropDown = document.querySelector('.dropdown_menu');
+//     if (window.scrollY > 100) {
+//         document.querySelector('header').style.backgroundColor = '#fff'
+//         mainLogo.setAttribute('src', 'img/LOGO/logo01.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = 'black'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = 'black'
+//         }
 
-    if (e.deltaY > 10) {
-        headFix.classList.remove("head_up");
-        headFix.classList.add("head_down");
+//     } else if (window.scrollY <= 100) {
+//         document.querySelector('header').style.backgroundColor = ''
+//         mainLogo.setAttribute('src', 'img/LOGO/logo03.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = '#fff'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = '#fff'
+//         }
+
+//     }
 
 
-    } else if (e.deltaY == 0) {
-        headFix.classList.add("head_down");
 
 
-    } else if (e.deltaY < -10) {
-        headFix.classList.remove("head_down");
-        headFix.classList.add("head_up");
-    }
+// })
 
-})
+
+// // header wheel, add remove class event
+// window.addEventListener('wheel', (e) => {
+
+//     const headFix = document.querySelector('header');
+//     const dropDown = document.querySelector('.dropdown_menu');
+
+//     if (e.deltaY > 10) {
+//         headFix.classList.remove("head_up");
+//         headFix.classList.add("head_down");
+
+
+//     } else if (e.deltaY == 0) {
+//         headFix.classList.add("head_down");
+
+
+//     } else if (e.deltaY < -10) {
+//         headFix.classList.remove("head_down");
+//         headFix.classList.add("head_up");
+//     }
+
+// })
 
 
 
@@ -243,62 +243,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //gnb search box  click event
-document.addEventListener('DOMContentLoaded', () => {
-    const searchClose = document.querySelector('.search_close')
-    const searchBox = document.querySelector('.search_box')
+// document.addEventListener('DOMContentLoaded', () => {
+//     const searchClose = document.querySelector('.search_close')
+//     const searchBox = document.querySelector('.search_box')
 
-    searchClose.addEventListener('click', () => {
-        searchBox.style.display = 'none';
-    })
+//     searchClose.addEventListener('click', () => {
+//         searchBox.style.display = 'none';
+//     })
 
-    const gnbSearch = document.querySelector('.gnb_search')
+//     const gnbSearch = document.querySelector('.gnb_search')
 
-    gnbSearch.addEventListener('click', () => {
-        searchBox.style.display = 'block'
-    })
+//     gnbSearch.addEventListener('click', () => {
+//         searchBox.style.display = 'block'
+//     })
 
-    const searchInput = document.getElementById('searchbox')
-    const recentList = document.querySelector('.recent_search ul')
-    const recentNo = document.querySelector('.noresearch')
+//     const searchInput = document.getElementById('searchbox')
+//     const recentList = document.querySelector('.recent_search ul')
+//     const recentNo = document.querySelector('.noresearch')
 
-    //검색창 검색어 추가/삭제
-    searchInput.addEventListener('change', function () {
-        recentNo.style.display = 'none'
+//     //검색창 검색어 추가/삭제
+//     searchInput.addEventListener('change', function () {
+//         recentNo.style.display = 'none'
 
-        const searchLi = document.createElement('li')
-        searchLi.setAttribute('class', 'searchli')
-        recentList.appendChild(searchLi)
-        searchLi.innerHTML = searchInput.value
-        searchInput.value = ''
-        searchInput.focus()
+//         const searchLi = document.createElement('li')
+//         searchLi.setAttribute('class', 'searchli')
+//         recentList.appendChild(searchLi)
+//         searchLi.innerHTML = searchInput.value
+//         searchInput.value = ''
+//         searchInput.focus()
 
-        const liDel = document.createElement('span')
-        liDel.setAttribute('class', 'lidel')
-        searchLi.appendChild(liDel)
-        liDel.innerHTML = 'X'
+//         const liDel = document.createElement('span')
+//         liDel.setAttribute('class', 'lidel')
+//         searchLi.appendChild(liDel)
+//         liDel.innerHTML = 'X'
 
-        liDel.addEventListener('click', function () {
-            recentList.removeChild(searchLi)
-        })
+//         liDel.addEventListener('click', function () {
+//             recentList.removeChild(searchLi)
+//         })
 
-        const researchAllDel = document.querySelector('.delete_history')
-        researchAllDel.addEventListener('click', function () {
+//         const researchAllDel = document.querySelector('.delete_history')
+//         researchAllDel.addEventListener('click', function () {
 
-            recentList.innerHTML = ''
-            recentNo.style.display = 'block'
+//             recentList.innerHTML = ''
+//             recentNo.style.display = 'block'
 
-        })
-
-
-    })
+//         })
 
 
+//     })
 
 
-
-
-
-})
+// })
 
 
 
@@ -868,28 +863,28 @@ newShoes.addEventListener('click', function () {
 // })
 
 
-//장바구니 카트 클릭이벤트
-const cart2 = document.querySelectorAll('.fa-shopping-cart')
-const cartCount = document.querySelector('.count')
-let cnt = 0
+// //장바구니 카트 클릭이벤트
+// const cart2 = document.querySelectorAll('.fa-shopping-cart')
+// const cartCount = document.querySelector('.count')
+// let cnt = 0
 
-cart2.forEach((value) => {
-    value.addEventListener('click', function () {
-        cnt++
-        cartCount.innerHTML = cnt
-    })
-})
+// cart2.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cnt++
+//         cartCount.innerHTML = cnt
+//     })
+// })
 
-const heart = document.querySelectorAll('.fa-heart')
-const heartCnt = document.querySelector('.heart_cnt')
-let cntheart = 0
+// const heart = document.querySelectorAll('.fa-heart')
+// const heartCnt = document.querySelector('.heart_cnt')
+// let cntheart = 0
 
-heart.forEach((value) => {
-    value.addEventListener('click', function () {
-        cntheart++
-        heartCnt.innerHTML = cntheart
-    })
-})
+// heart.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cntheart++
+//         heartCnt.innerHTML = cntheart
+//     })
+// })
 
 
 
@@ -985,7 +980,7 @@ window.addEventListener('scroll', function () {
         //     translateX: 0,
 
         // })
-        
+
         mgz01.forEach((value, index) => {
 
             gsap.to(value, 0.3 * index, {
@@ -1010,12 +1005,28 @@ closePopInfo.addEventListener('click', function () {
 
 
 ////////family site location////////
-const family = document.getElementById('family_site')
-family.addEventListener('change', (event) => {
+// const family = document.getElementById('family_site')
+// family.addEventListener('change', (event) => {
 
-    let options = event.currentTarget.options
-    let index = options.selectedIndex
+//     let options = event.currentTarget.options
+//     let index = options.selectedIndex
 
-    location.href = options[index].value
+//     location.href = options[index].value
 
-})
+// })
+
+
+
+// window.onload = function () {
+//     const family = document.getElementById('family_site')
+//     family.addEventListener('change', (event) => {
+
+//         let options = event.currentTarget.options
+//         let index = options.selectedIndex
+
+//         location.href = options[index].value
+
+//     })
+// }
+
+

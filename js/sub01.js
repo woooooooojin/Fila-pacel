@@ -327,31 +327,33 @@ function createPage(val) {
         }
 
 
+        
 
-
-        // //맨앞 맨뒤 페이지 좀더 고민,,,
+        // // //맨앞 맨뒤 페이지 좀더 고민,,,
         const prevBtn = document.querySelector('.prev_btn')
         const nextBtn = document.querySelector('.next_btn')
 
 
         prevBtn.addEventListener('click', function () {
 
-            nowPage = 0
+            
             paging.innerHTML = ''
-
             sublist.innerHTML = ''
+            nowPage = 0
             createPage(val)
 
         })
         nextBtn.addEventListener('click', function () {
 
-            nowPage = idx
             paging.innerHTML = ''
-
             sublist.innerHTML = ''
+            nowPage = idx
             createPage(val)
 
         })
+
+
+
 
     })
 
@@ -622,27 +624,27 @@ popclose.addEventListener('click', function () {
 
 
 //장바구니 카트 클릭이벤트
-const cart2 = document.querySelectorAll('.fa-shopping-cart')
-const cartCount = document.querySelector('.count')
-let cnt = 0
+// const cart2 = document.querySelectorAll('.fa-shopping-cart')
+// const cartCount = document.querySelector('.count')
+// let cnt = 0
 
-cart2.forEach((value) => {
-    value.addEventListener('click', function () {
-        cnt++
-        cartCount.innerHTML = cnt
-    })
-})
+// cart2.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cnt++
+//         cartCount.innerHTML = cnt
+//     })
+// })
 
-const heart = document.querySelectorAll('.fa-heart')
-const heartCnt = document.querySelector('.heart_cnt')
-let cntheart = 0
+// const heart = document.querySelectorAll('.fa-heart')
+// const heartCnt = document.querySelector('.heart_cnt')
+// let cntheart = 0
 
-heart.forEach((value) => {
-    value.addEventListener('click', function () {
-        cntheart++
-        heartCnt.innerHTML = cntheart
-    })
-})
+// heart.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cntheart++
+//         heartCnt.innerHTML = cntheart
+//     })
+// })
 
 
 

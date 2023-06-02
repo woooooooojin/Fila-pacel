@@ -78,179 +78,179 @@ $(function () {
 
 
 
-    $('.lnb_women').click(function () {
-        $('.drop_women').slideToggle(300);
-        $('.drop_men').css('display', 'none');
-        $('.drop_kids').css('display', 'none');
-        $('.drop_brand').css('display', 'none');
-        // $('header').css('backgroundColor','#fff')
-        // $('.head_lnb ul li a').css('color','black')
-        // $('.head_logo .imgwrap img').attr('src','./img/LOGO/01(1).png')
+    // $('.lnb_women').click(function () {
+    //     $('.drop_women').slideToggle(300);
+    //     $('.drop_men').css('display', 'none');
+    //     $('.drop_kids').css('display', 'none');
+    //     $('.drop_brand').css('display', 'none');
+    //     // $('header').css('backgroundColor','#fff')
+    //     // $('.head_lnb ul li a').css('color','black')
+    //     // $('.head_logo .imgwrap img').attr('src','./img/LOGO/01(1).png')
 
-    })
-
-
-    $('.lnb_men').click(function () {
-        $('.drop_men').slideToggle(300);
-        $('.drop_women').css('display', 'none');
-        $('.drop_kids').css('display', 'none');
-        $('.drop_brand').css('display', 'none');
-        // $('header').css('backgroundColor','#fff')
-        // $('.head_lnb ul li a').css('color','black')
-    })
-
-    $('.lnb_kids').click(function () {
-        $('.drop_kids').slideToggle(300);
-        $('.drop_women').css('display', 'none');
-        $('.drop_men').css('display', 'none');
-        $('.drop_brand').css('display', 'none');
-        // $('header').css('backgroundColor','#fff')
-        // $('.head_lnb ul li a').css('color','black')
-    })
-
-    $('.lnb_brand').click(function () {
-        $('.drop_brand').slideToggle(300);
-        $('.drop_women').css('display', 'none');
-        $('.drop_men').css('display', 'none');
-        $('.drop_kids').css('display', 'none');
-        // $('header').css('backgroundColor','#fff')
-        // $('.head_lnb ul li a').css('color','black')
-    })
-
-})
+    // })
 
 
-window.addEventListener('mouseover', () => {
+    // $('.lnb_men').click(function () {
+    //     $('.drop_men').slideToggle(300);
+    //     $('.drop_women').css('display', 'none');
+    //     $('.drop_kids').css('display', 'none');
+    //     $('.drop_brand').css('display', 'none');
+    //     // $('header').css('backgroundColor','#fff')
+    //     // $('.head_lnb ul li a').css('color','black')
+    // })
 
-    const mainLogo = document.querySelector('.logoimg');
-    const lnbA = document.querySelectorAll('.head_lnb li');
-    const head = document.querySelector('header');
-    const aTag = document.querySelectorAll('.head_lnb li a')
-    const gnbI = document.querySelectorAll('.head_gnb li a i')
+    // $('.lnb_kids').click(function () {
+    //     $('.drop_kids').slideToggle(300);
+    //     $('.drop_women').css('display', 'none');
+    //     $('.drop_men').css('display', 'none');
+    //     $('.drop_brand').css('display', 'none');
+    //     // $('header').css('backgroundColor','#fff')
+    //     // $('.head_lnb ul li a').css('color','black')
+    // })
 
-
-
-
-    if (window.scrollY === 0) {
-
-        // head.style.backgroundColor = '#fff'
-
-        mainLogo.setAttribute('src', '../img/LOGO/logo01.png')
-
-
-
-    }
-
+    // $('.lnb_brand').click(function () {
+    //     $('.drop_brand').slideToggle(300);
+    //     $('.drop_women').css('display', 'none');
+    //     $('.drop_men').css('display', 'none');
+    //     $('.drop_kids').css('display', 'none');
+    //     // $('header').css('backgroundColor','#fff')
+    //     // $('.head_lnb ul li a').css('color','black')
+    // })
 
 })
 
 
-window.addEventListener('scroll', (e) => {
+// window.addEventListener('mouseover', () => {
 
-
-    const mainLnb = document.querySelectorAll('.head_lnb ul li a');
-    const mainGnb = document.querySelectorAll('.head_gnb ul li a');
-    const mainLogo = document.querySelector('.head_logo .imgwrap img');
-
-    if (window.scrollY > 100) {
-        document.querySelector('header').style.backgroundColor = '#fff'
-        mainLogo.setAttribute('src', '../img/LOGO/logo01.png')
-        for (let i = 0; i < mainLnb.length; i++) {
-            mainLnb[i].style.color = 'black'
-        }
-        for (let i = 0; i < mainGnb.length; i++) {
-            mainGnb[i].style.color = 'black'
-        }
-
-    } else if (window.scrollY <= 100) {
-        document.querySelector('header').style.backgroundColor = ''
-        mainLogo.setAttribute('src', '../img/LOGO/logo03.png')
-        for (let i = 0; i < mainLnb.length; i++) {
-            mainLnb[i].style.color = '#fff'
-        }
-        for (let i = 0; i < mainGnb.length; i++) {
-            mainGnb[i].style.color = '#fff'
-        }
-
-    }
+//     const mainLogo = document.querySelector('.logoimg');
+//     const lnbA = document.querySelectorAll('.head_lnb li');
+//     const head = document.querySelector('header');
+//     const aTag = document.querySelectorAll('.head_lnb li a')
+//     const gnbI = document.querySelectorAll('.head_gnb li a i')
 
 
 
 
-})
+//     if (window.scrollY === 0) {
 
-// header wheel, add remove class event
-window.addEventListener('wheel', (e) => {
+//         // head.style.backgroundColor = '#fff'
 
-    const headFix = document.querySelector('header');
-    const dropDown = document.querySelector('.dropdown_menu');
-
-    if (e.deltaY > 10) {
-        headFix.classList.remove("head_up");
-        headFix.classList.add("head_down");
+//         mainLogo.setAttribute('src', '../img/LOGO/logo01.png')
 
 
-    } else if (e.deltaY == 0) {
-        headFix.classList.add("head_down");
+
+//     }
 
 
-    } else if (e.deltaY < -10) {
-        headFix.classList.remove("head_down");
-        headFix.classList.add("head_up");
-    }
-
-})
+// })
 
 
-//gnb search box  click event
-document.addEventListener('DOMContentLoaded', () => {
-    const searchClose = document.querySelector('.search_close')
-    const searchBox = document.querySelector('.search_box')
+// window.addEventListener('scroll', (e) => {
 
-    searchClose.addEventListener('click', () => {
-        searchBox.style.display = 'none';
-    })
 
-    const gnbSearch = document.querySelector('.gnb_search')
+//     const mainLnb = document.querySelectorAll('.head_lnb ul li a');
+//     const mainGnb = document.querySelectorAll('.head_gnb ul li a');
+//     const mainLogo = document.querySelector('.head_logo .imgwrap img');
 
-    gnbSearch.addEventListener('click', () => {
-        searchBox.style.display = 'block'
-    })
+//     if (window.scrollY > 100) {
+//         document.querySelector('header').style.backgroundColor = '#fff'
+//         mainLogo.setAttribute('src', '../img/LOGO/logo01.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = 'black'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = 'black'
+//         }
 
-    const searchInput = document.getElementById('searchbox')
-    const recentList = document.querySelector('.recent_search ul')
-    const recentNo = document.querySelector('.noresearch')
+//     } else if (window.scrollY <= 100) {
+//         document.querySelector('header').style.backgroundColor = ''
+//         mainLogo.setAttribute('src', '../img/LOGO/logo03.png')
+//         for (let i = 0; i < mainLnb.length; i++) {
+//             mainLnb[i].style.color = '#fff'
+//         }
+//         for (let i = 0; i < mainGnb.length; i++) {
+//             mainGnb[i].style.color = '#fff'
+//         }
 
-    //검색창 검색어 추가/삭제
-    searchInput.addEventListener('change',function(){
-        recentNo.style.display = 'none'
+//     }
 
-        const searchLi = document.createElement('li')
-        searchLi.setAttribute('class','searchli')
-        recentList.appendChild(searchLi)
-        searchLi.innerHTML = searchInput.value
-        searchInput.value = ''
-        searchInput.focus()
 
-        const liDel = document.createElement('span')
-        liDel.setAttribute('class','lidel')
-        searchLi.appendChild(liDel)
-        liDel.innerHTML = 'X'
 
-        liDel.addEventListener('click',function(){
-            recentList.removeChild(searchLi)
-        })
 
-        const researchAllDel = document.querySelector('.delete_history')
-        researchAllDel.addEventListener('click',function(){
+// })
 
-            recentList.innerHTML = ''
-            recentNo.style.display = 'block'
+// // header wheel, add remove class event
+// window.addEventListener('wheel', (e) => {
 
-        })
+//     const headFix = document.querySelector('header');
+//     const dropDown = document.querySelector('.dropdown_menu');
+
+//     if (e.deltaY > 10) {
+//         headFix.classList.remove("head_up");
+//         headFix.classList.add("head_down");
+
+
+//     } else if (e.deltaY == 0) {
+//         headFix.classList.add("head_down");
+
+
+//     } else if (e.deltaY < -10) {
+//         headFix.classList.remove("head_down");
+//         headFix.classList.add("head_up");
+//     }
+
+// })
+
+
+// //gnb search box  click event
+// document.addEventListener('DOMContentLoaded', () => {
+//     const searchClose = document.querySelector('.search_close')
+//     const searchBox = document.querySelector('.search_box')
+
+//     searchClose.addEventListener('click', () => {
+//         searchBox.style.display = 'none';
+//     })
+
+//     const gnbSearch = document.querySelector('.gnb_search')
+
+//     gnbSearch.addEventListener('click', () => {
+//         searchBox.style.display = 'block'
+//     })
+
+//     const searchInput = document.getElementById('searchbox')
+//     const recentList = document.querySelector('.recent_search ul')
+//     const recentNo = document.querySelector('.noresearch')
+
+//     //검색창 검색어 추가/삭제
+//     searchInput.addEventListener('change',function(){
+//         recentNo.style.display = 'none'
+
+//         const searchLi = document.createElement('li')
+//         searchLi.setAttribute('class','searchli')
+//         recentList.appendChild(searchLi)
+//         searchLi.innerHTML = searchInput.value
+//         searchInput.value = ''
+//         searchInput.focus()
+
+//         const liDel = document.createElement('span')
+//         liDel.setAttribute('class','lidel')
+//         searchLi.appendChild(liDel)
+//         liDel.innerHTML = 'X'
+
+//         liDel.addEventListener('click',function(){
+//             recentList.removeChild(searchLi)
+//         })
+
+//         const researchAllDel = document.querySelector('.delete_history')
+//         researchAllDel.addEventListener('click',function(){
+
+//             recentList.innerHTML = ''
+//             recentNo.style.display = 'block'
+
+//         })
 
         
-    })
+//     })
 
 
     
@@ -258,21 +258,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-})
+// })
 
 
 
 //장바구니 카트 클릭이벤트
-const cart2 = document.querySelectorAll('.fa-shopping-cart')
-const cartCount = document.querySelector('.count')
-let cnt = 0
+// const cart2 = document.querySelectorAll('.fa-shopping-cart')
+// const cartCount = document.querySelector('.count')
+// let cnt = 0
 
-cart2.forEach((value) => {
-    value.addEventListener('click', function () {
-        cnt++
-        cartCount.innerHTML = cnt
-    })
-})
+// cart2.forEach((value) => {
+//     value.addEventListener('click', function () {
+//         cnt++
+//         cartCount.innerHTML = cnt
+//     })
+// })
 
 
 

@@ -13,7 +13,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" /> -->
+
+
+    <!--css-->
     <link rel="stylesheet" href="/pacel_fila.9ad09f98.css">
+    <link rel="stylesheet" href="/header.0efffd70.css">
+    <link rel="stylesheet" href="/footer.7900fa3e.css">
     <!--css-->
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
 
@@ -25,8 +30,12 @@
 
     <!--user js-->
     <script type="module" src="/main.fb6bbcaf.js" defer=""></script>
-    <script src="/countdown.dea6023f.js" defer=""></script>
     <!--countdown js-->
+    <script src="/load.753dc8c9.js" defer=""></script>
+    <script src="/countdown.dea6023f.js" defer=""></script>
+    <!--cart and like js-->
+    <script src="/cart_like.2d9ef80e.js" defer=""></script>
+    <script src="/commmon.fa3133a9.js" defer=""></script>
 
 
     <!--scroll magic-->
@@ -46,109 +55,137 @@
     import jquery -->
 
 
-    <script>$(function () {
-  //lnb slide toggle function
+    <!-- <script>
+        $(function () {
 
-  $('.lnb_women').click(function () {
-    $('.drop_women').slideToggle(300);
-    $('.drop_men').css('display', 'none');
-    $('.drop_kids').css('display', 'none');
-    $('.drop_brand').css('display', 'none');
-    // $('header').css('backgroundColor','#fff')
-    // $('.head_lnb ul li a').css('color','black')
-    // $('.head_logo .imgwrap img').attr('src','./img/LOGO/01(1).png')
-  });
-
-  $('.lnb_men').click(function () {
-    $('.drop_men').slideToggle(300);
-    $('.drop_women').css('display', 'none');
-    $('.drop_kids').css('display', 'none');
-    $('.drop_brand').css('display', 'none');
-    // $('header').css('backgroundColor','#fff')
-    // $('.head_lnb ul li a').css('color','black')
-  });
-
-  $('.lnb_kids').click(function () {
-    $('.drop_kids').slideToggle(300);
-    $('.drop_women').css('display', 'none');
-    $('.drop_men').css('display', 'none');
-    $('.drop_brand').css('display', 'none');
-    // $('header').css('backgroundColor','#fff')
-    // $('.head_lnb ul li a').css('color','black')
-  });
-
-  $('.lnb_brand').click(function () {
-    $('.drop_brand').slideToggle(300);
-    $('.drop_women').css('display', 'none');
-    $('.drop_men').css('display', 'none');
-    $('.drop_kids').css('display', 'none');
-    // $('header').css('backgroundColor','#fff')
-    // $('.head_lnb ul li a').css('color','black')
-  });
-
-  $('.new_info').click(function () {
-    $('.new_info_desc').css('display', 'block');
-  });
-
-  // $('.new_box_close').click(function(){
-  //     $('.new_info_desc').css('display','none')
-  // })
-
-  // $(window).scroll(function(){
-  //     if($(window).scrollTop() > 100){
-  //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(1).png');
-  //         $('header').css('backgroundColor','#fff')
-  //         $('.head_lnb ul li a').css('color','black')
-  //         $('.head_gnb ul li a').css('color','black')
-  //     }else{
-  //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(3).png')
-  //         $('header').css('backgroundColor','')
-  //         $('.head_lnb ul li a').css('color','#fff')
-  //         $('.head_gnb ul li a').css('color','#fff')
-  //     }
-  // })
-
-  //dir btn event
-  $(window).scroll(function () {
-    if ($(window).scrollTop() >= 500) {
-      $('.dir_btn').stop().animate({
-        right: 0
-      }, 500);
-    } else {
-      $('.dir_btn').stop().animate({
-        right: -50
-      }, 500);
-    }
-  });
-  $('.top_btn').click(function (e) {
-    e.preventDefault();
-    $('html, body').stop().animate({
-      scrollTop: 0
-    }, 300);
-  });
-  $('.bot_btn').click(function (e) {
-    e.preventDefault();
-    $('html, body').stop().animate({
-      scrollTop: $(document).height()
-    }, 300);
-  });
-});
-$(function () {
-  $('.quick_menu').css('top', $(window).height() / 2 - $('.quick_menu').height() / 2);
-  $(window).scroll(function () {
-    var point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick_menu').height() / 2);
-    $('.quick_menu').stop().animate({
-      top: point
-    }, 300);
-  });
-}); // quickmenu</script>
+            //lnb slide toggle function
 
 
 
 
+            $('.lnb_women').click(function () {
+                $('.drop_women').slideToggle(300);
+                $('.drop_men').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+                // $('.head_logo .imgwrap img').attr('src','./img/LOGO/01(1).png')
+
+            })
 
 
-<script src="/pacel_fila.9ad09f98.js"></script></head>
+            $('.lnb_men').click(function () {
+                $('.drop_men').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+            $('.lnb_kids').click(function () {
+                $('.drop_kids').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_men').css('display', 'none');
+                $('.drop_brand').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+            $('.lnb_brand').click(function () {
+                $('.drop_brand').slideToggle(300);
+                $('.drop_women').css('display', 'none');
+                $('.drop_men').css('display', 'none');
+                $('.drop_kids').css('display', 'none');
+                // $('header').css('backgroundColor','#fff')
+                // $('.head_lnb ul li a').css('color','black')
+            })
+
+
+
+            $('.new_info').click(function () {
+                $('.new_info_desc').css('display', 'block')
+            })
+
+            // $('.new_box_close').click(function(){
+            //     $('.new_info_desc').css('display','none')
+            // })
+
+            // $(window).scroll(function(){
+            //     if($(window).scrollTop() > 100){
+            //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(1).png');
+            //         $('header').css('backgroundColor','#fff')
+            //         $('.head_lnb ul li a').css('color','black')
+            //         $('.head_gnb ul li a').css('color','black')
+            //     }else{
+            //         $('.head_logo .imgwrap img').attr('src','./img/00. LOGO/01(3).png')
+            //         $('header').css('backgroundColor','')
+            //         $('.head_lnb ul li a').css('color','#fff')
+            //         $('.head_gnb ul li a').css('color','#fff')
+            //     }
+            // })
+
+
+
+            //dir btn event
+            $(window).scroll(function () {
+
+                if ($(window).scrollTop() >= 500) {
+                    $('.dir_btn').stop().animate({
+                        right: 0,
+                    }, 500)
+                } else {
+                    $('.dir_btn').stop().animate({
+                        right: -50,
+                    }, 500)
+                }
+            })
+
+            $('.top_btn').click(function (e) {
+                e.preventDefault();
+
+                $('html, body').stop().animate({
+                    scrollTop: 0,
+                }, 300)
+            })
+
+            $('.bot_btn').click(function (e) {
+                e.preventDefault();
+
+                $('html, body').stop().animate({
+                    scrollTop: $(document).height(),
+                }, 300)
+            })
+
+
+
+
+
+
+        })
+
+        $(function () {
+
+            $('.quick_menu').css('top', $(window).height() / 2 - $('.quick_menu').height() / 2);
+            $(window).scroll(function () {
+
+                let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick_menu').height() /
+                    2)
+
+                $('.quick_menu').stop().animate({
+                    top: point,
+                }, 300)
+            })
+        }) // quickmenu 
+    </script> -->
+
+
+
+
+
+
+<script src="/pacel_fila.9ad09f98.js"></script><script src="/header.0efffd70.js"></script><script src="/footer.7900fa3e.js"></script></head>
 
 <body>
 
@@ -174,511 +211,11 @@ $(function () {
 
 
 
-
-    <header class="header">
-
-        <div class="header_wrap">
-
-            <div class="head_logo">
-                <div class="imgwrap">
-                    <a href="/index.html">
-                        <img src="/logo03.87ea252d.png" alt="logo" class="logoimg">
-                    </a>
-                </div>
-
-            </div>
-            <!--head logo-->
-
-            <div class="head_lnb">
-                <ul>
-                    <li class="lnb_women"><a href="#!" class="black">WOMEN</a></li>
-                    <li class="lnb_men"><a href="#!" class="black">MEN</a></li>
-                    <li class="lnb_kids"><a href="#!" class="black">KIDS</a></li>
-                    <li class="lnb_brand"><a href="#!" class="black">BRAND</a></li>
-                </ul>
-            </div>
-            <!--head lnb-->
-
-            <div class="head_gnb">
-                <ul>
-                    <li><a href="#!"><i class="fas fa-map-marker-alt"></i></a></li>
-                    <li><a href="#!"><i class="fas fa-search gnb_search"></i></a></li>
-                    <li><a href="/loginpage\login.html"><i class="fas fa-user-alt"></i></a></li>
-                    <li>
-                        <a href="#!"><i class="fas fa-shopping-basket"></i>
-                            <span class="count">0</span>
-                    </a></li>
-                </ul>
-            </div>
-            <!--head gnb-->
-
-        </div><!-- hedaer wrap-->
-
-
-        <!--drop down menu-->
-        <div class="dropdown_menu drop_women">
-            <div class="container">
-
-                <div class="drop_menu_wrap">
-                    <div class="dropbox_01 dbox">
-                        <h4>New & Featured</h4>
-                        <ul class="menu_list">
-                            <li><a href="#!">신상품</a></li>
-                            <li><a href="#!">베스트</a></li>
-                            <li><a href="#!">스타일</a></li>
-                            <li><a href="#!">세일</a></li>
-
-                        </ul>
-                        <ul class="sub_menu">
-                            <li><a href="/sub_onepage\sub02.html">ONLINE EXCLUSIVE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">TENNIS COLLECTION</a></li>
-                            <li><a href="/sub_onepage\sub02.html">FLOAT ELITE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">DAILY SHOES RAYFLIDE</a></li>
-                        </ul>
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_02 dbox">
-                        <h4>의류</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">바람막이/아노락</a></li>
-                            <li><a href="/subpage01\sub01.html">후드티/맨투맨</a></li>
-                            <li><a href="/subpage01\sub01.html">트레이닝 세트</a></li>
-                            <li><a href="/subpage01\sub01.html">니트/스웨터</a></li>
-                            <li><a href="/subpage01\sub01.html">티셔츠</a></li>
-                            <li><a href="/subpage01\sub01.html">브라탑/레깅스</a></li>
-                            <li><a href="/subpage01\sub01.html">팬츠</a></li>
-                            <li><a href="/subpage01\sub01.html">스커트/원피스</a></li>
-                            <li><a href="/subpage01\sub01.html">다운/플리스</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 02 end-->
-
-                    <div class="dropbox_03 dbox">
-                        <h4>신발</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프스타일</a></li>
-                            <li><a href="/subpage01\sub01.html">헤리티지</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">러닝</a></li>
-                            <li><a href="/subpage01\sub01.html">샌들/슬리퍼</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_04 dbox">
-                        <h4>용품</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">백팩</a></li>
-                            <li><a href="/subpage01\sub01.html">메신저백</a></li>
-                            <li><a href="/subpage01\sub01.html">숄더백/토트백</a></li>
-                            <li><a href="/subpage01\sub01.html">모자</a></li>
-                            <li><a href="/subpage01\sub01.html">양말</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">기타</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_05 dbox">
-                        <h4>언더웨어</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-                            <li><a href="/subpage01\sub01.html">브라</a></li>
-                            <li><a href="/subpage01\sub01.html">팬티</a></li>
-                            <li><a href="/subpage01\sub01.html">커플</a></li>
-                            <li><a href="/subpage01\sub01.html">이너웨어</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프웨어</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-
-                    <div class="dropbox_06 dbox">
-                        <h4>스포츠</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">러닝</a></li>
-
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                </div>
-                <!--dropdown menu wrap end-->
-
-            </div>
-            <!--container-->
-        </div>
-        <!--dropdown menu end-->
-
-
-
-
-        <div class="dropdown_menu drop_men">
-
-            <div class="container">
-                <div class="drop_menu_wrap">
-                    <div class="dropbox_01 dbox">
-                        <h4>New & Featured</h4>
-                        <ul class="menu_list">
-                            <li><a href="#!">신상품</a></li>
-                            <li><a href="#!">베스트</a></li>
-                            <li><a href="#!">스타일</a></li>
-                            <li><a href="#!">세일</a></li>
-
-                        </ul>
-                        <ul class="sub_menu">
-                            <li><a href="/sub_onepage\sub02.html">ONLINE EXCLUSIVE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">TENNIS COLLECTION</a></li>
-                            <li><a href="/sub_onepage\sub02.html">FLOAT ELITE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">DAILY SHOES RAYFLIDE</a></li>
-                        </ul>
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_02 dbox">
-                        <h4>의류</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">바람막이/아노락</a></li>
-                            <li><a href="/subpage01\sub01.html">후드티/맨투맨</a></li>
-                            <li><a href="/subpage01\sub01.html">트레이닝 세트</a></li>
-                            <li><a href="/subpage01\sub01.html">니트/스웨터</a></li>
-                            <li><a href="/subpage01\sub01.html">티셔츠</a></li>
-                            <li><a href="/subpage01\sub01.html">브라탑/레깅스</a></li>
-                            <li><a href="/subpage01\sub01.html">팬츠</a></li>
-                            <li><a href="/subpage01\sub01.html">스커트/원피스</a></li>
-                            <li><a href="/subpage01\sub01.html">다운/플리스</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 02 end-->
-
-                    <div class="dropbox_03 dbox">
-                        <h4>신발</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프스타일</a></li>
-                            <li><a href="/subpage01\sub01.html">헤리티지</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">러닝</a></li>
-                            <li><a href="/subpage01\sub01.html">샌들/슬리퍼</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_04 dbox">
-                        <h4>용품</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">백팩</a></li>
-                            <li><a href="/subpage01\sub01.html">메신저백</a></li>
-                            <li><a href="/subpage01\sub01.html">숄더백/토트백</a></li>
-                            <li><a href="/subpage01\sub01.html">모자</a></li>
-                            <li><a href="/subpage01\sub01.html">양말</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">기타</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_05 dbox">
-                        <h4>언더웨어</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-                            <li><a href="/subpage01\sub01.html">브라</a></li>
-                            <li><a href="/subpage01\sub01.html">팬티</a></li>
-                            <li><a href="/subpage01\sub01.html">커플</a></li>
-                            <li><a href="/subpage01\sub01.html">이너웨어</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프웨어</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_06 dbox">
-                        <h4>스포츠</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">러닝</a></li>
-
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                </div>
-                <!--dropdown menu wrap end-->
-
-            </div>
-            <!--container-->
-        </div>
-        <!--dropdown menu end-->
-
-
-        <div class="dropdown_menu drop_kids">
-            <div class="container">
-
-                <div class="drop_menu_wrap">
-                    <div class="dropbox_01 dbox">
-                        <h4>New & Featured</h4>
-                        <ul class="menu_list">
-                            <li><a href="#!">신상품</a></li>
-                            <li><a href="#!">베스트</a></li>
-                            <li><a href="#!">스타일</a></li>
-                            <li><a href="#!">세일</a></li>
-
-                        </ul>
-                        <ul class="sub_menu">
-                            <li><a href="/sub_onepage\sub02.html">ONLINE EXCLUSIVE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">>TENNIS COLLECTION</a></li>
-                            <li><a href="/sub_onepage\sub02.html">>FLOAT ELITE</a></li>
-                            <li><a href="/sub_onepage\sub02.html">>DAILY SHOES RAYFLIDE</a></li>
-                        </ul>
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_02 dbox">
-                        <h4>의류</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">바람막이/아노락</a></li>
-                            <li><a href="/subpage01\sub01.html">후드티/맨투맨</a></li>
-                            <li><a href="/subpage01\sub01.html">트레이닝 세트</a></li>
-                            <li><a href="/subpage01\sub01.html">니트/스웨터</a></li>
-                            <li><a href="/subpage01\sub01.html">티셔츠</a></li>
-                            <li><a href="/subpage01\sub01.html">브라탑/레깅스</a></li>
-                            <li><a href="/subpage01\sub01.html">팬츠</a></li>
-                            <li><a href="/subpage01\sub01.html">스커트/원피스</a></li>
-                            <li><a href="/subpage01\sub01.html">다운/플리스</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 02 end-->
-
-                    <div class="dropbox_03 dbox">
-                        <h4>신발</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프스타일</a></li>
-                            <li><a href="/subpage01\sub01.html">헤리티지</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">러닝</a></li>
-                            <li><a href="/subpage01\sub01.html">샌들/슬리퍼</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-                    <div class="dropbox_04 dbox">
-                        <h4>용품</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">백팩</a></li>
-                            <li><a href="/subpage01\sub01.html">메신저백</a></li>
-                            <li><a href="/subpage01\sub01.html">숄더백/토트백</a></li>
-                            <li><a href="/subpage01\sub01.html">모자</a></li>
-                            <li><a href="/subpage01\sub01.html">양말</a></li>
-                            <li><a href="/subpage01\sub01.html">테니스</a></li>
-                            <li><a href="/subpage01\sub01.html">기타</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-
-                    <div class="dropbox_05 dbox">
-                        <h4>언더웨어</h4>
-                        <ul class="menu_list">
-                            <li><a href="/subpage01\sub01.html">전체보기</a></li>
-                            <li><a href="/subpage01\sub01.html">온라인 단독</a></li>
-                            <li><a href="/subpage01\sub01.html">브라</a></li>
-                            <li><a href="/subpage01\sub01.html">팬티</a></li>
-                            <li><a href="/subpage01\sub01.html">커플</a></li>
-                            <li><a href="/subpage01\sub01.html">이너웨어</a></li>
-                            <li><a href="/subpage01\sub01.html">라이프웨어</a></li>
-
-                        </ul>
-
-                    </div>
-                    <!--drop box 01 end-->
-
-
-                </div>
-                <!--dropdown menu wrap end-->
-
-
-            </div>
-            <!--container -->
-
-        </div>
-        <!--dropdown menu end-->
-
-
-
-        <div class="dropdown_menu drop_brand">
-
-
-            <div class="drop_menu_wrap">
-
-                <div class="brand_box">
-                    <div class="brand_img">
-                        <img src="/menu01.7c84e86c.jpg" alt="brand01">
-                    </div>
-                    <div class="brand_tit">
-                        <h4>About FILA</h4>
-                    </div>
-                </div>
-                <!--brand box-->
-
-                <div class="brand_box">
-                    <div class="brand_img">
-                        <img src="/menu02.2dbe2c37.jpg" alt="brand01">
-                    </div>
-                    <div class="brand_tit">
-                        <h4>Collaboration</h4>
-                    </div>
-                </div>
-                <!--brand box-->
-
-                <div class="brand_box">
-                    <div class="brand_img">
-                        <img src="/menu03.9cf9b246.jpg" alt="brand01">
-                    </div>
-                    <div class="brand_tit">
-                        <h4>Sustainability</h4>
-                    </div>
-                </div>
-                <!--brand box-->
-
-                <div class="brand_box">
-                    <div class="brand_img">
-                        <img src="/menu04.24e9763f.jpg" alt="brand01">
-                    </div>
-                    <div class="brand_tit">
-                        <h4>Athelete</h4>
-                    </div>
-                </div>
-                <!--brand box-->
-
-                <div class="brand_box">
-                    <div class="brand_img">
-                        <img src="/menu05.52b61bbf.jpg" alt="brand01">
-                    </div>
-                    <div class="brand_tit">
-                        <h4>Tennis Stories</h4>
-                    </div>
-                </div>
-                <!--brand box-->
-
-            </div>
-            <!--dropdown menu wrap end-->
-
-
-        </div>
-        <!--dropdown menu end-->
-
-
-    </header>
-
-
-
-
-
-    <div class="search_box">
-        <div class="search_box_wrap">
-
-            <div class="search_input">
-                <input type="search" placeholder="검색어 입력" id="searchbox">
-                <div class="search_close">
-                    <i class="fas fa-times"></i>
-                </div>
-                <div class="search_icon">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
-
-            <div class="search_list_wrap">
-
-                <div class="search_list">
-                    <h4>인기검색어</h4>
-                    <ul>
-                        <li>데일리슈즈</li>
-                        <li>휠라레이플라이드</li>
-                        <li>디스럽터</li>
-                        <li>휠라골프</li>
-                        <li>리니어로고</li>
-                        <li>바람막이</li>
-                    </ul>
-                </div>
-                <!--list-->
-
-                <div class="search_list">
-                    <h4>추천검색어</h4>
-                    <ul>
-                        <li>데일리슈즈</li>
-                        <li>휠라레이플라이드</li>
-                        <li>디스럽터</li>
-                        <li>휠라골프</li>
-                        <li>리니어로고</li>
-                        <li>바람막이</li>
-                    </ul>
-                </div>
-                <!--list-->
-
-                <div class="search_list recent_search">
-                    <h4>최근검색어</h4>
-                    <ul>
-                        <li class="noresearch">최근 검색어가 없습니다.</li>
-
-                    </ul>
-
-                    <div class="delete_history">
-                        <span>전체기록삭제</span>
-                    </div>
-                </div>
-                <!--list-->
-
-            </div>
-            <!--list wrap-->
-
-
-
-        </div>
-        <!--searchbox wrap end-->
-    </div>
-    <!--search box-->
+<!---------------header----------------->
+   <div id="header">
+    <script src="/load.753dc8c9.js"></script>
+    <script>loadHTML("./foot_head/header.html");</script>
+   </div>
 
 
 
@@ -1770,186 +1307,18 @@ $(function () {
     </section>
 
 
-    <footer class="footer">
-        <div class="contianer">
-
-
-            <div class="footer_wrap">
-                <div class="footer_box1">
-
-                    <div class="foot_logo">
-                        <img src="/01(1).a6999b2f.png" alt="img">
-                    </div>
-                    <div class="foot_menu01">
-                        <h4>WOMEN</h4>
-                        <ul>
-                            <li>의류</li>
-                            <li>신발</li>
-                            <li>용품</li>
-                            <li>언더웨어</li>
-                            <li>베스트</li>
-                            <li>신상품</li>
-                            <li>세일</li>
-                        </ul>
-                    </div>
-                    <div class="foot_menu02">
-                        <h4>MEN</h4>
-                        <ul>
-                            <li>의류</li>
-                            <li>신발</li>
-                            <li>용품</li>
-                            <li>언더웨어</li>
-                            <li>베스트</li>
-                            <li>신상품</li>
-                            <li>세일</li>
-                        </ul>
-                    </div>
-                    <div class="foot_menu03">
-                        <h4>KIDS</h4>
-                        <ul>
-                            <li>의류</li>
-                            <li>신발</li>
-                            <li>용품</li>
-                            <li>베스트</li>
-                            <li>신상품</li>
-                            <li>세일</li>
-                        </ul>
-                    </div>
-
-                    <div class="foot_menu04">
-                        <h4>BRAND</h4>
-                        <ul>
-                            <li>About Fila</li>
-                            <li>Collaboration</li>
-                            <li>Sustainability</li>
-                            <li>Athelete</li>
-                            <li>Tennis Stories</li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!--footer box 1-->
-
-                <div class="footer_box2">
-
-                    <div class="foot_menu05">
-                        <div class="foot_menu05_1">
-                            <ul>
-                                <li>매장안내</li>
-                                <li>통합회원 이용약관</li>
-                            </ul>
-                        </div>
-                        <!--menu 05_1 end-->
-
-                        <div class="foot_menu05_1">
-                            <ul>
-                                <li>공지사항</li>
-                                <li class="red">개인정보처리방침</li>
-                            </ul>
-                        </div>
-                        <!--menu 05_1 end-->
-
-                        <div class="foot_menu05_1">
-                            <ul>
-                                <li>FILA Membership</li>
-                                <li>제보센터</li>
-                            </ul>
-                        </div>
-                        <!--menu 05_1 end-->
-
-                        <div class="foot_menu05_1">
-                            <ul>
-                                <li>대리점개설문의</li>
-                                <li class="blue">Korea</li>
-                            </ul>
-                        </div>
-                        <!--menu 05_1 end-->
-
-                        <div class="foot_menu05_1">
-                            <ul>
-                                <li>Fila 입찰 참여 안내</li>
-                                <li>
-                                    <select name="family_site" id="family_site">
-                                        <option>Family Site</option>
-                                        <option value="https://www.keds.co.kr/main/main.asp">KEDS 온라인스토어</option>
-                                        <option value="zooyork.net/main/main.asp">ZooYork 온라인스토어</option>
-                                        <option value="https://buyer.nicedocu.com/web/buyer/main/index.jsp">FILA 입찰공고
-                                        </option>
-                                        <option value="https://www.filaholdings.com/kr/main/index.asp">FILA Holdings
-                                        </option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--menu 05_1 end-->
+   
 
 
 
-                    </div>
-                    <!--menu 05 end-->
+    <div id="footer">
 
-                </div>
-                <!--footer box2 end-->
+        <script src="/load.753dc8c9.js"></script>
+        <script>loadHTML("./foot_head/footer.html");</script>
+    </div>
 
-                <div class="footer_box3">
+    
 
-                    <div class="menu06">
-
-                        <div class="menu06_1">
-
-                            <div class="menu06_desc">
-                                <p>
-                                    서울시 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주) 대표이사 : 김지헌<br><br>
-                                    사업자등록번호 : 716-81-01573 <span class="foot_span01">사업자정보확인</span> 통신판매업신고 : 제
-                                    2020-서울강동-0160호 개인정보 관리책임자 : 이학우<br><br>
-                                    본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.<br><br>
-                                    콘텐츠산업진흥법에 의한 콘텐츠보호안내 <span class="foot_span02"> 자세히보기 </span><br>
-                                </p>
-                            </div>
-                            <!--menu06 desc end-->
-
-                        </div>
-                        <!--menu06_1 end-->
-
-                        <div class="menu06_2">
-                            <div class="cs_box">
-                                <p>CS Center</p>
-                            </div>
-                            <!--cs box end-->
-
-                            <h4>1577 - 3472</h4>
-                            <h4>filaonline@fila.com</h4>
-                            <p class="day">평일 월 - 금 : 09시 - 18시 (공휴일 제외)</p>
-
-                        </div>
-                        <!--menu06_2 end-->
-
-                        <div class="menu06_3">
-                            <div class="snsbox">
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-facebook-square"></i>
-                                <i class="fab fa-youtube"></i>
-                                <i class="fas fa-comment"></i>
-                            </div>
-                            <!--snsbox end-->
-                        </div>
-                        <!--menu06_3 end-->
-
-                    </div>
-                    <!--menu06 end-->
-
-                </div>
-                <!--footer box3 end-->
-
-
-            </div>
-            <!--footer wrap end-->
-
-
-        </div>
-        <!--container end-->
-
-    </footer>
 
 
     <div class="quick_menu">
@@ -2044,14 +1413,6 @@ $(function () {
             닫기
         </div>
     </div>
-
-
-
-
-
-
-
-
 
 
 

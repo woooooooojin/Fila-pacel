@@ -638,27 +638,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //장바구니 카트 클릭이벤트
-    const cart2 = document.querySelectorAll('.cart_box')
-    const cartCount = document.querySelector('.count')
-    let cnt = 0
+    // const cart2 = document.querySelectorAll('.cart_box')
+    // const cartCount = document.querySelector('.count')
+    // let cnt = 0
 
-    cart2.forEach((value) => {
-        value.addEventListener('click', function () {
-            cnt++
-            cartCount.innerHTML = cnt
-        })
-    })
+    // cart2.forEach((value) => {
+    //     value.addEventListener('click', function () {
+    //         cnt++
+    //         cartCount.innerHTML = cnt
+    //     })
+    // })
 
-    const heart = document.querySelectorAll('.like_box')
-    const heartCnt = document.querySelector('.heart_cnt')
-    let cntheart = 0
+    // const heart = document.querySelectorAll('.like_box')
+    // const heartCnt = document.querySelector('.heart_cnt')
+    // let cntheart = 0
 
-    heart.forEach((value) => {
-        value.addEventListener('click', function () {
-            cntheart++
-            heartCnt.innerHTML = cntheart
-        })
-    })
+    // heart.forEach((value) => {
+    //     value.addEventListener('click', function () {
+    //         cntheart++
+    //         heartCnt.innerHTML = cntheart
+    //     })
+    // })
 
 
 
