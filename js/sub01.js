@@ -584,6 +584,24 @@ const filterList = document.querySelector('.filter_box_list')
 // })
 
 
+$('.filter_open').click(function () {
+    $('.filter_open').css('display', 'none')
+
+    $('.filter_close').css('display', 'block')
+    $('.filter_box_list').slideDown(300)
+
+
+})
+$('.filter_close').click(function () {
+    $('.filter_close').css('display', 'none')
+
+    $('.filter_open').css('display', 'block')
+
+    $('.filter_box_list').slideUp(300)
+
+})
+
+
 
 
 
