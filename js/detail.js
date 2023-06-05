@@ -263,6 +263,21 @@ document.addEventListener('DOMContentLoaded', function () {
         plusCnt()
 
 
+        //이미지넣기 
+        const inputFile = document.getElementById('input_file')
+        const labelName = document.getElementById('label_name')
+
+        const imgbox = document.createElement('div')
+        imgbox.setAttribute('class', 'R_imgbox')
+        Li.appendChild(imgbox)
+
+        const imgboxImg = document.createElement('img')
+        imgbox.appendChild(imgboxImg)
+
+        imgboxImg.src = URL.createObjectURL(inputFile.files[0])
+        labelName.textContent = '사진 업로드 click ! (필수)'
+        inputFile.value = ''
+
 
 
 
@@ -271,7 +286,6 @@ document.addEventListener('DOMContentLoaded', function () {
         starBox.setAttribute('class', 'inner_stars') //리뷰에 나오는별
         Li.appendChild(starBox)
         starBox.innerHTML = Rstars.innerHTML //별점 생성 
-
 
 
 
@@ -358,6 +372,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     })
+   
+
+     //포토리뷰 이미지추가 라벨 text
+     const inputFile2 = document.getElementById('input_file')
+        const labelName2 = document.getElementById('label_name')
+
+     inputFile2.addEventListener('change', () => {
+        labelName2.textContent = inputFile2.files[0].name
+    })
+    
+
+
 
     ////별점 추가 리뷰
     const innerStar = document.querySelectorAll('.inner_stars')
@@ -396,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
     executeRating(ratingStars, ratingResult)
 
 
-    
+
     ///////////////////////////////////////////////////
 
 
@@ -722,45 +748,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-const inputFile = document.getElementById('input_file')
-// let imgsrc = document.querySelector('.img_wrap img')
-const imgBtn = document.querySelector('.upload') //버튼
-const labelName = document.getElementById('label_name') //라벨
-// const photoLi = document.querySelector('.photolist li')
+// const inputFile = document.getElementById('input_file')
+// // let imgsrc = document.querySelector('.img_wrap img')
+// const imgBtn = document.querySelector('.upload') //버튼
+// const labelName = document.getElementById('label_name') //라벨
+// // const photoLi = document.querySelector('.photolist li')
 
-const photoList = document.querySelector('.photolist')
-imgBtn.addEventListener('click', () => {
-    // imgsrc.src = URL.createObjectURL(inputFile.files[0])
+// const photoList = document.querySelector('.photolist')
+// imgBtn.addEventListener('click', () => {
+//     // imgsrc.src = URL.createObjectURL(inputFile.files[0])
 
-    const lis = document.createElement('li')
+//     const lis = document.createElement('li')
 
-    const imgWrap = document.createElement('div')
-    imgWrap.setAttribute('class', 'img_wrap')
-    lis.appendChild(imgWrap)
+//     const imgWrap = document.createElement('div')
+//     imgWrap.setAttribute('class', 'img_wrap')
+//     lis.appendChild(imgWrap)
 
-    const photoImg = document.createElement('img')
-    imgWrap.appendChild(photoImg)
-    photoImg.src = URL.createObjectURL(inputFile.files[0])
+//     const photoImg = document.createElement('img')
+//     imgWrap.appendChild(photoImg)
+//     photoImg.src = URL.createObjectURL(inputFile.files[0])
 
-    const delPhoto = document.createElement('div')
-    delPhoto.setAttribute('class', 'photo_del')
-    delPhoto.innerHTML = 'X'
-    lis.appendChild(delPhoto)
-
-
-    photoList.appendChild(lis)
-    labelName.textContent = '사진 업로드 click !'
+//     const delPhoto = document.createElement('div')
+//     delPhoto.setAttribute('class', 'photo_del')
+//     delPhoto.innerHTML = 'X'
+//     lis.appendChild(delPhoto)
 
 
-    delPhoto.addEventListener('click', () => {
-        photoList.removeChild(lis)
-    })
+//     photoList.appendChild(lis)
+//     labelName.textContent = '사진 업로드 click !'
 
-})
 
-inputFile.addEventListener('change', () => {
+//     delPhoto.addEventListener('click', () => {
+//         photoList.removeChild(lis)
+//     })
 
-    // if (inputFile.files[0]) {
-    labelName.textContent = inputFile.files[0].name
-    // }
-})
+// })
+
+
+
+// inputFile.addEventListener('change', () => {
+
+//     // if (inputFile.files[0]) {
+//     labelName.textContent = inputFile.files[0].name
+//     // }
+// })
