@@ -127,7 +127,7 @@ family.addEventListener('change', function (event) {
   location.href = options[index].value;
 });
 
-//gnb search box  click event 헤더 검색창 이벤트
+// gnb search box  click event 헤더 검색창 이벤트
 document.addEventListener('DOMContentLoaded', function () {
   var searchClose = document.querySelector('.search_close');
   var searchBox = document.querySelector('.search_box');
@@ -344,7 +344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61695" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

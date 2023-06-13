@@ -92,62 +92,62 @@ window.addEventListener('wheel', (e) => {
 })
 
 //gnb search box  click event
-document.addEventListener('DOMContentLoaded', () => {
-    const searchClose = document.querySelector('.search_close')
-    const searchBox = document.querySelector('.search_box')
+// document.addEventListener('DOMContentLoaded', () => {
+//     const searchClose = document.querySelector('.search_close')
+//     const searchBox = document.querySelector('.search_box')
 
-    searchClose.addEventListener('click', () => {
-        searchBox.style.display = 'none';
-    })
+//     searchClose.addEventListener('click', () => {
+//         searchBox.style.display = 'none';
+//     })
 
-    const gnbSearch = document.querySelector('.gnb_search')
+//     const gnbSearch = document.querySelector('.gnb_search')
 
-    gnbSearch.addEventListener('click', () => {
-        searchBox.style.display = 'block'
-    })
+//     gnbSearch.addEventListener('click', () => {
+//         searchBox.style.display = 'block'
+//     })
 
-    const searchInput = document.getElementById('searchbox')
-    const recentList = document.querySelector('.recent_search ul')
-    const recentNo = document.querySelector('.noresearch')
+//     const searchInput = document.getElementById('searchbox')
+//     const recentList = document.querySelector('.recent_search ul')
+//     const recentNo = document.querySelector('.noresearch')
 
-    //검색창 검색어 추가/삭제
-    searchInput.addEventListener('change', function () {
-        recentNo.style.display = 'none'
+//     //검색창 검색어 추가/삭제
+//     searchInput.addEventListener('change', function () {
+//         recentNo.style.display = 'none'
 
-        const searchLi = document.createElement('li')
-        searchLi.setAttribute('class', 'searchli')
-        recentList.appendChild(searchLi)
-        searchLi.innerHTML = searchInput.value
-        searchInput.value = ''
-        searchInput.focus()
+//         const searchLi = document.createElement('li')
+//         searchLi.setAttribute('class', 'searchli')
+//         recentList.appendChild(searchLi)
+//         searchLi.innerHTML = searchInput.value
+//         searchInput.value = ''
+//         searchInput.focus()
 
-        const liDel = document.createElement('span')
-        liDel.setAttribute('class', 'lidel')
-        searchLi.appendChild(liDel)
-        liDel.innerHTML = 'X'
+//         const liDel = document.createElement('span')
+//         liDel.setAttribute('class', 'lidel')
+//         searchLi.appendChild(liDel)
+//         liDel.innerHTML = 'X'
 
-        liDel.addEventListener('click', function () {
-            recentList.removeChild(searchLi)
-        })
+//         liDel.addEventListener('click', function () {
+//             recentList.removeChild(searchLi)
+//         })
 
-        const researchAllDel = document.querySelector('.delete_history')
-        researchAllDel.addEventListener('click', function () {
+//         const researchAllDel = document.querySelector('.delete_history')
+//         researchAllDel.addEventListener('click', function () {
 
-            recentList.innerHTML = ''
-            recentNo.style.display = 'block'
+//             recentList.innerHTML = ''
+//             recentNo.style.display = 'block'
 
-        })
-
-
-    })
+//         })
 
 
+//     })
 
 
 
 
 
-})
+
+
+// })
 
 
 
@@ -164,11 +164,6 @@ function madeDiv(val) {
 
         const subDiv = document.createElement('div')
         subDiv.setAttribute('class', 'subBox')
-
-        // for (let j = 0; j < subData.length; j++) {
-        //     subDiv.setAttribute('id', 'sub_sort')
-
-        // } //아이디값 부여
 
 
         const subImgWrap = document.createElement('div')
@@ -265,14 +260,7 @@ function madeDiv(val) {
         subList.appendChild(subDiv)
 
 
-
-
-
-
     }
-
-
-
 
 }
 // madeDiv(subData)
@@ -327,16 +315,16 @@ function createPage(val) {
         }
 
 
-        
 
-        // // //맨앞 맨뒤 페이지 좀더 고민,,,
+
+        //맨앞 맨뒤
         const prevBtn = document.querySelector('.prev_btn')
         const nextBtn = document.querySelector('.next_btn')
 
 
         prevBtn.addEventListener('click', function () {
 
-            
+
             paging.innerHTML = ''
             sublist.innerHTML = ''
             nowPage = 0
@@ -373,7 +361,7 @@ const selectBox = document.getElementById('select_sort'); //select box
 const sublist = document.querySelector('.sublist')
 let paging = document.querySelector('.paging_ex')
 selectBox.addEventListener('change', function () {
-    if (selectBox.value === 'expensive') {
+    if (selectBox.value === 'expensive') { //가격높은순
         let exp = subData.sort((a, b) => {
             return (a.price01 - b.price01) * -1
         })
@@ -383,7 +371,7 @@ selectBox.addEventListener('change', function () {
         createPage(exp)
 
 
-    } else if (selectBox.value === 'cheap') {
+    } else if (selectBox.value === 'cheap') { //가격낮은순
         let cheap = subData.sort((a, b) => {
             return (a.price01 - b.price01)
         })
@@ -392,7 +380,7 @@ selectBox.addEventListener('change', function () {
         nowPage = 0
         createPage(cheap)
         //낮은가격순
-    } else if (selectBox.value === 'basic') {
+    } else if (selectBox.value === 'basic') { //기본순
         let basic = subData.sort((a, b) => {
             return (a.id - b.id)
         })
@@ -401,28 +389,28 @@ selectBox.addEventListener('change', function () {
         nowPage = 0
         createPage(basic)
         // 기본
-    } else if (selectBox.value === 'pop') {
+    } else if (selectBox.value === 'pop') { //인기순
         let pop = subData.sort((a, b) => {
             return (a.pop - b.pop)
         })
         sublist.innerHTML = ''
         paging.innerHTML = ''
         nowPage = 0
-        createPage(pop) //인기순
-    } else if (selectBox.value === 'new') {
+        createPage(pop)
+    } else if (selectBox.value === 'new') { //신상순
         let newarrival = subData.sort((a, b) => {
             return new Date(a.day).getTime() - new Date(b.day).getTime()
         }) //신상날짜순
         sublist.innerHTML = ''
         paging.innerHTML = ''
         nowPage = 0
-        createPage(newarrival) //신상순
+        createPage(newarrival)
     }
 
 })
 
 
-//검은색 필터 기능
+//색상별 필터 기능
 
 const blackColor = document.getElementById('color_chk02')
 const whiteColor = document.getElementById('color_chk12')
@@ -438,6 +426,7 @@ const priceChk04 = document.getElementById('price_chk04')
 const priceChk05 = document.getElementById('price_chk05')
 const priceChkDefault = document.getElementById('price_chk06')
 
+//색상별 필터값을 변수에 담는다,,
 const bk = subData.filter((a) => {
     return a.color === 'black'
 })
@@ -466,13 +455,36 @@ const price05 = subData.filter((a) => {
 })
 
 
+//////////////////검색필터/////////////////////
+const searchInputVal = document.getElementById('searchbox')
+const searchBox2 = document.querySelector('.search_box')
+
+searchInputVal.addEventListener('change', () => {
+    const searchRes = subData.filter((e) => {
+        return (e.name.includes(searchInputVal.value))
+    })
+    console.log(searchRes)
+
+
+    
+    sublist.innerHTML = ''
+    paging.innerHTML = ''
+    nowPage = 0
+    createPage(searchRes)
+    searchBox2.style.display = 'none'
+
+   
+})
+
+
+/////////////////////////////////////////////////////
 
 blackColor.addEventListener('click', function () {
+
     sublist.innerHTML = ''
     paging.innerHTML = ''
     nowPage = 0
     createPage(bk)
-
 
 })
 
@@ -568,6 +580,7 @@ priceChkDefault.addEventListener('click', function () {
 
 
 
+
 const filterOpen = document.querySelector('.filter_open')
 const filterClose = document.querySelector('.filter_close')
 const filterList = document.querySelector('.filter_box_list')
@@ -582,6 +595,7 @@ const filterList = document.querySelector('.filter_box_list')
 // filterClose.addEventListener('click', () => {
 //     filterList.style.display = 'none'
 // })
+
 
 
 $('.filter_open').click(function () {
@@ -600,9 +614,6 @@ $('.filter_close').click(function () {
     $('.filter_box_list').slideUp(300)
 
 })
-
-
-
 
 
 const grid01 = document.querySelector('.grid_01')

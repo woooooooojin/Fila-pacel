@@ -118,34 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/load.js":[function(require,module,exports) {
-//footer fetch로 가져오기
-//addlistener error
-
-// const foot = document.getElementById('footer')
-
-// fetch('footer.html')
-// .then(resolve => resolve.text())
-// .then(data => foot.innerHTML = data)
-
-//일단은 됨 //애드리쓰너 안뜸
-// const foot = document.getElementById('footer')
-
-// async function footerGet() {
-//     await fetch('./footer.html')
-//         .then(resolve => resolve.text())
-//         .then(data => foot.innerHTML = data)
-
-// }
-// footerGet()
-
-//jquery로 가져오기
-
-// $(function(){
-
-//     $('#footer').load("./footer.html")
-
-// })
-
 //http리퀘스트로 가져오기
 
 function loadHTML(file) {
@@ -186,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61695" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

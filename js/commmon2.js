@@ -1,4 +1,3 @@
-
 //푸터 패밀리사이트 링크 event
 
 const family = document.getElementById('family_site')
@@ -15,7 +14,7 @@ family.addEventListener('change', (event) => {
 
 
 
-//gnb search box  click event 헤더 검색창 이벤트
+// gnb search box  click event 헤더 검색창 이벤트
 document.addEventListener('DOMContentLoaded', () => {
     const searchClose = document.querySelector('.search_close')
     const searchBox = document.querySelector('.search_box')
@@ -62,12 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
 
+        
 
     })
 
 
-
 })
+
+
+
 
 
 
@@ -172,7 +174,7 @@ $(function () {
             top: point,
         }, 300)
     })
-}) 
+})
 
 
 
@@ -181,7 +183,7 @@ $(function () {
 ///////lnb slide toggle function/////
 $(function () {
 
-    
+
 
 
 

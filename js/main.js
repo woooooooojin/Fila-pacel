@@ -416,7 +416,7 @@ running.addEventListener('click', () => {
 
 
 
-//밑에 배열함수와 더러운코드들을 위에 모듈데이터로 생성후 export import 시켜서 foreach 사용하여 처리함.
+//밑에 배열함수와 지저분한 코드들을 위에 모듈데이터로 생성후 export import 시켜서 foreach 사용하여 처리함.
 
 // tshirt.addEventListener('click', function () {
 

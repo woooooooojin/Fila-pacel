@@ -690,7 +690,7 @@ running.addEventListener('click', function () {
   });
 }); //tennis 클릭이벤트
 
-//밑에 배열함수와 더러운코드들을 위에 모듈데이터로 생성후 export import 시켜서 foreach 사용하여 처리함.
+//밑에 배열함수와 지저분한 코드들을 위에 모듈데이터로 생성후 export import 시켜서 foreach 사용하여 처리함.
 
 // tshirt.addEventListener('click', function () {
 
@@ -1232,7 +1232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61695" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

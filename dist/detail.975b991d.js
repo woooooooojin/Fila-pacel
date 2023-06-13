@@ -177,43 +177,56 @@ window.addEventListener('wheel', function (e) {
 });
 
 //gnb search box  click event
-document.addEventListener('DOMContentLoaded', function () {
-  var searchClose = document.querySelector('.search_close');
-  var searchBox = document.querySelector('.search_box');
-  searchClose.addEventListener('click', function () {
-    searchBox.style.display = 'none';
-  });
-  var gnbSearch = document.querySelector('.gnb_search');
-  gnbSearch.addEventListener('click', function () {
-    searchBox.style.display = 'block';
-  });
-  var searchInput = document.getElementById('searchbox');
-  var recentList = document.querySelector('.recent_search ul');
-  var recentNo = document.querySelector('.noresearch');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const searchClose = document.querySelector('.search_close')
+//     const searchBox = document.querySelector('.search_box')
 
-  //검색창 검색어 추가/삭제
-  searchInput.addEventListener('change', function () {
-    recentNo.style.display = 'none';
-    var searchLi = document.createElement('li');
-    searchLi.setAttribute('class', 'searchli');
-    recentList.appendChild(searchLi);
-    searchLi.innerHTML = searchInput.value;
-    searchInput.value = '';
-    searchInput.focus();
-    var liDel = document.createElement('span');
-    liDel.setAttribute('class', 'lidel');
-    searchLi.appendChild(liDel);
-    liDel.innerHTML = 'X';
-    liDel.addEventListener('click', function () {
-      recentList.removeChild(searchLi);
-    });
-    var researchAllDel = document.querySelector('.delete_history');
-    researchAllDel.addEventListener('click', function () {
-      recentList.innerHTML = '';
-      recentNo.style.display = 'block';
-    });
-  });
-});
+//     searchClose.addEventListener('click', () => {
+//         searchBox.style.display = 'none';
+//     })
+
+//     const gnbSearch = document.querySelector('.gnb_search')
+
+//     gnbSearch.addEventListener('click', () => {
+//         searchBox.style.display = 'block'
+//     })
+
+//     const searchInput = document.getElementById('searchbox')
+//     const recentList = document.querySelector('.recent_search ul')
+//     const recentNo = document.querySelector('.noresearch')
+
+//     //검색창 검색어 추가/삭제
+//     searchInput.addEventListener('change', function () {
+//         recentNo.style.display = 'none'
+
+//         const searchLi = document.createElement('li')
+//         searchLi.setAttribute('class', 'searchli')
+//         recentList.appendChild(searchLi)
+//         searchLi.innerHTML = searchInput.value
+//         searchInput.value = ''
+//         searchInput.focus()
+
+//         const liDel = document.createElement('span')
+//         liDel.setAttribute('class', 'lidel')
+//         searchLi.appendChild(liDel)
+//         liDel.innerHTML = 'X'
+
+//         liDel.addEventListener('click', function () {
+//             recentList.removeChild(searchLi)
+//         })
+
+//         const researchAllDel = document.querySelector('.delete_history')
+//         researchAllDel.addEventListener('click', function () {
+
+//             recentList.innerHTML = ''
+//             recentNo.style.display = 'block'
+
+//         })
+
+//     })
+
+// })
+
 document.addEventListener('DOMContentLoaded', function () {
   var pdcInfoLi = document.querySelectorAll('.pdc_info_tit li');
   var infoBox01 = document.querySelector('.infobox_01');
@@ -292,6 +305,18 @@ document.addEventListener('DOMContentLoaded', function () {
       numberSpan.innerHTML = Rcnt;
     }
     plusCnt();
+
+    //이미지넣기 
+    var inputFile = document.getElementById('input_file');
+    var labelName = document.getElementById('label_name');
+    var imgbox = document.createElement('div');
+    imgbox.setAttribute('class', 'R_imgbox');
+    Li.appendChild(imgbox);
+    var imgboxImg = document.createElement('img');
+    imgbox.appendChild(imgboxImg);
+    imgboxImg.src = URL.createObjectURL(inputFile.files[0]);
+    labelName.textContent = '사진 업로드 click ! (필수)';
+    inputFile.value = '';
     var Rstars = document.querySelector('.review_star'); //사용자가 누르는 별
     var starBox = document.createElement('div');
     starBox.setAttribute('class', 'inner_stars'); //리뷰에 나오는별
@@ -352,6 +377,13 @@ document.addEventListener('DOMContentLoaded', function () {
     closeX.addEventListener('click', function () {
       R_List.removeChild(Li);
     });
+  });
+
+  //포토리뷰 이미지추가 라벨 text
+  var inputFile2 = document.getElementById('input_file');
+  var labelName2 = document.getElementById('label_name');
+  inputFile2.addEventListener('change', function () {
+    labelName2.textContent = inputFile2.files[0].name;
   });
 
   ////별점 추가 리뷰
@@ -595,38 +627,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ///photo review
 
-var inputFile = document.getElementById('input_file');
-// let imgsrc = document.querySelector('.img_wrap img')
-var imgBtn = document.querySelector('.upload'); //버튼
-var labelName = document.getElementById('label_name'); //라벨
-// const photoLi = document.querySelector('.photolist li')
+// const inputFile = document.getElementById('input_file')
+// // let imgsrc = document.querySelector('.img_wrap img')
+// const imgBtn = document.querySelector('.upload') //버튼
+// const labelName = document.getElementById('label_name') //라벨
+// // const photoLi = document.querySelector('.photolist li')
 
-var photoList = document.querySelector('.photolist');
-imgBtn.addEventListener('click', function () {
-  // imgsrc.src = URL.createObjectURL(inputFile.files[0])
+// const photoList = document.querySelector('.photolist')
+// imgBtn.addEventListener('click', () => {
+//     // imgsrc.src = URL.createObjectURL(inputFile.files[0])
 
-  var lis = document.createElement('li');
-  var imgWrap = document.createElement('div');
-  imgWrap.setAttribute('class', 'img_wrap');
-  lis.appendChild(imgWrap);
-  var photoImg = document.createElement('img');
-  imgWrap.appendChild(photoImg);
-  photoImg.src = URL.createObjectURL(inputFile.files[0]);
-  var delPhoto = document.createElement('div');
-  delPhoto.setAttribute('class', 'photo_del');
-  delPhoto.innerHTML = 'X';
-  lis.appendChild(delPhoto);
-  photoList.appendChild(lis);
-  labelName.textContent = '사진 업로드 click !';
-  delPhoto.addEventListener('click', function () {
-    photoList.removeChild(lis);
-  });
-});
-inputFile.addEventListener('change', function () {
-  // if (inputFile.files[0]) {
-  labelName.textContent = inputFile.files[0].name;
-  // }
-});
+//     const lis = document.createElement('li')
+
+//     const imgWrap = document.createElement('div')
+//     imgWrap.setAttribute('class', 'img_wrap')
+//     lis.appendChild(imgWrap)
+
+//     const photoImg = document.createElement('img')
+//     imgWrap.appendChild(photoImg)
+//     photoImg.src = URL.createObjectURL(inputFile.files[0])
+
+//     const delPhoto = document.createElement('div')
+//     delPhoto.setAttribute('class', 'photo_del')
+//     delPhoto.innerHTML = 'X'
+//     lis.appendChild(delPhoto)
+
+//     photoList.appendChild(lis)
+//     labelName.textContent = '사진 업로드 click !'
+
+//     delPhoto.addEventListener('click', () => {
+//         photoList.removeChild(lis)
+//     })
+
+// })
+
+// inputFile.addEventListener('change', () => {
+
+//     // if (inputFile.files[0]) {
+//     labelName.textContent = inputFile.files[0].name
+//     // }
+// })
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -652,7 +692,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61695" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
